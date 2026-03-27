@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets - Portfolio BTS SIO</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #FAF3E0; --secondary-color: #F5E6D3; --accent-color: #FF7043; --text-color: #5D4037; --text-secondary: #8D6E63; --transition: all 0.3s ease; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--primary-color); color: var(--text-color); line-height: 1.6; }
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 2rem; background: rgba(250,243,224,0.95); backdrop-filter: blur(10px); z-index: 1000; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 10px rgba(93,64,55,0.1); }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-color); text-decoration: none; margin-left: 2rem; transition: var(--transition); position: relative; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-color); }
+        .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background-color: var(--accent-color); transition: var(--transition); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        .projets-hero { padding: 120px 0 60px; background-color: var(--secondary-color); text-align: center; position: relative; overflow: hidden; }
+        .projets-hero h1 { font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem; }
+        .projets-hero .subtitle { font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+        .projets-grid { padding: 4rem 0; }
+        .projets-grid .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+        .projet-card { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); border-radius: 15px; overflow: hidden; transition: all 0.3s ease; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.1); }
+        .projet-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent); transform: translateX(-100%); transition: 0.6s; }
+        .projet-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(255,112,67,0.2); }
+        .projet-card:hover::before { transform: translateX(100%); }
+
+        .projet-image { position: relative; overflow: hidden; height: 200px; }
+        .projet-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+        .projet-card:hover .projet-image img { transform: scale(1.1); }
+        .projet-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+        .projet-card:hover .projet-overlay { opacity: 1; }
+        .projet-links { display: flex; gap: 1rem; }
+        .projet-link { color: var(--accent-color); font-size: 1.5rem; background: rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease; }
+        .projet-link:hover { background: var(--accent-color); color: white; transform: scale(1.1); }
+
+        .projet-content { padding: 1.5rem; }
+        .projet-content h3 { color: var(--accent-color); font-size: 1.3rem; margin-bottom: 1rem; }
+        .projet-content p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+        footer { background-color: var(--secondary-color); padding: 3rem 2rem 1rem; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .footer-section h3 { color: var(--accent-color); margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.5rem; }
+        .footer-section a { color: var(--text-secondary); text-decoration: none; transition: var(--transition); }
+        .footer-section a:hover { color: var(--accent-color); }
+        .footer-bottom { text-align: center; padding: 1rem 0; border-top: 1px solid rgba(93,64,55,0.2); margin-top: 2rem; }
+        .footer-bottom p { color: var(--text-color); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: rgba(250,243,224,0.98); padding: 1rem 2rem; }
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: block; }
+            .projets-hero h1 { font-size: 2rem; }
+            .projets-grid .container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Accueil</a>
+            <a href="presentation.html">Ma présentation</a>
+            <a href="bts-sio.html">BTS SIO</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="projets.html" class="active">Projets</a>
+            <a href="veille.html">Veille</a>
+        </div>
+        <div class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <section class="projets-hero">
+        <div class="container">
+            <h1>Mes Projets</h1>
+            <p class="subtitle">Découvrez mes réalisations et applications</p>
+        </div>
+    </section>
+
+    <section class="projets-grid">
+        <div class="container">
+
+            <div class="projet-card">
+                <div class="projet-image">
+                    <img src="images/projet1.png" alt="Voyage en C#">
+                    <div class="projet-overlay">
+                        <div class="projet-links">
+                            <a href="images/projet1.png" class="projet-link" target="_blank"><i class="fas fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="projet-content">
+                    <h3>Voyage en C# :</h3>
+                    <p>Calculateur de montant de billets d'avion prenant en compte plusieurs paramètres, cliquer sur la photo pour le téléchargement.</p>
+                </div>
+            </div>
+
+            <div class="projet-card">
+                <div class="projet-image">
+                    <img src="images/projet2.png" alt="Calculatrice en C#">
+                    <div class="projet-overlay">
+                        <div class="projet-links">
+                            <a href="images/projet2.png" class="projet-link" target="_blank"><i class="fas fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="projet-content">
+                    <h3>Calculatrice en C# :</h3>
+                    <p>Programme représentant une calculatrice, cliquer sur la photo pour le téléchargement.</p>
+                </div>
+            </div>
+
+            <!-- Ajoutez vos projets ici -->
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li><li><a href="presentation.html">Ma présentation</a></li>
+                    <li><a href="bts-sio.html">BTS SIO</a></li><li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="projets.html">Projets</a></li><li><a href="veille.html">Veille</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>© 2025 ATTAL Sofiane. Tous droits réservés.</p></div>
+    </footer>
+</body>
+</html>

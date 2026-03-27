@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTS SIO - Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #FAF3E0; --secondary-color: #F5E6D3; --accent-color: #FF7043; --text-color: #5D4037; --text-secondary: #8D6E63; --transition: all 0.3s ease; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--primary-color); color: var(--text-color); line-height: 1.6; }
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 2rem; background: rgba(250,243,224,0.95); backdrop-filter: blur(10px); z-index: 1000; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 10px rgba(93,64,55,0.1); }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-color); text-decoration: none; margin-left: 2rem; transition: var(--transition); position: relative; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-color); }
+        .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background-color: var(--accent-color); transition: var(--transition); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        .bts-hero { padding: 120px 0 60px; background-color: var(--secondary-color); text-align: center; }
+        .bts-hero h1 { font-size: 2.8rem; margin-bottom: 1rem; color: var(--accent-color); }
+        .bts-hero .subtitle { font-size: 1.2rem; color: var(--text-secondary); }
+
+        .bts-overview { padding: 60px 0; }
+        .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .overview-card { background-color: var(--secondary-color); padding: 2rem; border-radius: 10px; text-align: center; transition: var(--transition); }
+        .overview-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(255,112,67,0.3); }
+        .overview-card i { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem; }
+        .overview-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .overview-card p { color: var(--text-secondary); }
+
+        .bts-options { padding: 80px 0; background-color: var(--secondary-color); }
+        .bts-options h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--accent-color); }
+        .options-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .option-card { background-color: var(--primary-color); border-radius: 15px; overflow: hidden; transition: var(--transition); }
+        .option-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(255,112,67,0.3); }
+        .option-header { background-color: var(--accent-color); color: var(--primary-color); padding: 1.5rem; text-align: center; }
+        .option-header i { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+        .option-header h3 { font-size: 1.8rem; }
+        .option-content { padding: 2rem; }
+        .option-content h4 { color: var(--accent-color); margin-bottom: 1rem; }
+        .option-content p { margin-bottom: 1.5rem; line-height: 1.6; }
+        .option-skills { list-style: none; }
+        .option-skills li { margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; }
+        .option-skills li::before { content: '•'; color: var(--accent-color); position: absolute; left: 0; }
+
+        .bts-program { padding: 80px 0; }
+        .bts-program h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--accent-color); }
+        .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .program-card { background-color: var(--secondary-color); padding: 2rem; border-radius: 10px; transition: var(--transition); }
+        .program-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(255,112,67,0.3); }
+        .program-card h3 { color: var(--accent-color); margin-bottom: 1.5rem; }
+        .program-card ul { list-style: none; }
+        .program-card ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+        .program-card ul li::before { content: '→'; color: var(--accent-color); position: absolute; left: 0; }
+
+        .bts-debouches { padding: 80px 0; background-color: var(--secondary-color); }
+        .bts-debouches h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--accent-color); }
+        .debouches-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .debouche-card { background-color: var(--primary-color); padding: 2rem; border-radius: 10px; transition: var(--transition); }
+        .debouche-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(255,112,67,0.3); }
+        .debouche-card h3 { color: var(--accent-color); margin-bottom: 1.5rem; text-align: center; }
+        .debouche-card ul { list-style: none; }
+        .debouche-card ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+        .debouche-card ul li::before { content: '→'; color: var(--accent-color); position: absolute; left: 0; }
+
+        footer { background-color: var(--secondary-color); padding: 3rem 2rem 1rem; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .footer-section h3 { color: var(--accent-color); margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.5rem; }
+        .footer-section a { color: var(--text-secondary); text-decoration: none; transition: var(--transition); }
+        .footer-section a:hover { color: var(--accent-color); }
+        .footer-bottom { text-align: center; padding: 1rem 0; border-top: 1px solid rgba(93,64,55,0.2); margin-top: 2rem; }
+        .footer-bottom p { color: var(--text-color); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: rgba(250,243,224,0.98); padding: 1rem 2rem; }
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: block; }
+            .bts-hero h1 { font-size: 2rem; }
+            .options-grid, .program-grid, .debouches-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Accueil</a>
+            <a href="presentation.html">Ma présentation</a>
+            <a href="bts-sio.html" class="active">BTS SIO</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="projets.html">Projets</a>
+            <a href="veille.html">Veille</a>
+        </div>
+        <div class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <section class="bts-hero">
+        <div class="container">
+            <h1>BTS Services Informatiques aux Organisations</h1>
+            <p class="subtitle">Une formation professionnalisante en informatique</p>
+        </div>
+    </section>
+
+    <section class="bts-overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-card"><i class="fas fa-calendar-alt"></i><h3>Durée</h3><p>2 ans</p></div>
+                <div class="overview-card"><i class="fas fa-graduation-cap"></i><h3>Diplôme</h3><p>Bac +2</p></div>
+                <div class="overview-card"><i class="fas fa-code-branch"></i><h3>Spécialités</h3><p>2 options</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bts-options">
+        <div class="container">
+            <h2>Les Options</h2>
+            <div class="options-grid">
+                <div class="option-card">
+                    <div class="option-header"><i class="fas fa-laptop-code"></i><h3>SLAM</h3></div>
+                    <div class="option-content">
+                        <h4>Solutions Logicielles et Applications Métiers</h4>
+                        <p>Cette option forme des spécialistes des logiciels (rédaction d'un cahier des charges, formulation des besoins et spécifications, développement, intégration au sein de la société).</p>
+                        <ul class="option-skills"><li>Développement d'applications</li><li>Programmation web</li><li>Bases de données</li><li>Cybersécurité</li></ul>
+                    </div>
+                </div>
+                <div class="option-card">
+                    <div class="option-header"><i class="fas fa-server"></i><h3>SISR</h3></div>
+                    <div class="option-content">
+                        <h4>Solutions d'Infrastructure, Systèmes et Réseaux</h4>
+                        <p>Cette option forme des professionnels des réseaux et équipements informatiques (installation, maintenance, sécurité).</p>
+                        <ul class="option-skills"><li>Administration systèmes</li><li>Configuration réseaux</li><li>Sécurité des infrastructures</li><li>Virtualisation</li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bts-program">
+        <div class="container">
+            <h2>Programme de Formation</h2>
+            <div class="program-grid">
+                <div class="program-card">
+                    <h3>Enseignements Généraux</h3>
+                    <ul><li>Culture générale et expression</li><li>Anglais</li><li>Mathématiques</li><li>Culture économique, juridique et managériale</li></ul>
+                </div>
+                <div class="program-card">
+                    <h3>Enseignements Professionnels</h3>
+                    <ul><li>Développement</li><li>Bases de données</li><li>Cybersécurité</li><li>Réseaux</li><li>Systèmes d'exploitation</li></ul>
+                </div>
+                <div class="program-card">
+                    <h3>Projets et Stages</h3>
+                    <ul><li>Stage de première année (4 semaines)</li><li>Stage de deuxième année (8 semaines)</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bts-debouches">
+        <div class="container">
+            <h2>Débouchés Professionnels</h2>
+            <div class="debouches-grid">
+                <div class="debouche-card">
+                    <h3>SLAM</h3>
+                    <ul><li>Développeur d'applications</li><li>Programmeur analyste</li><li>Programmeur d'applications</li><li>Responsable des services applicatifs</li><li>Technicien d'études</li></ul>
+                </div>
+                <div class="debouche-card">
+                    <h3>SISR</h3>
+                    <ul><li>Administrateur systèmes et réseaux</li><li>Informaticien support et déploiement</li><li>Pilote d'exploitation</li><li>Support systèmes et réseaux</li><li>Technicien d'infrastructure</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li><li><a href="presentation.html">Ma présentation</a></li>
+                    <li><a href="bts-sio.html">BTS SIO</a></li><li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="projets.html">Projets</a></li><li><a href="veille.html">Veille</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>© 2025 ATTAL Sofiane. Tous droits réservés.</p></div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique - Portfolio BTS SIO</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #FAF3E0; --secondary-color: #F5E6D3; --accent-color: #FF7043; --text-color: #5D4037; --text-secondary: #8D6E63; --transition: all 0.3s ease; --bg-color: #FAF3E0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--primary-color); color: var(--text-color); line-height: 1.6; }
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 2rem; background: rgba(250,243,224,0.95); backdrop-filter: blur(10px); z-index: 1000; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 10px rgba(93,64,55,0.1); }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-color); text-decoration: none; margin-left: 2rem; transition: var(--transition); position: relative; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-color); }
+        .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background-color: var(--accent-color); transition: var(--transition); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        .veille-hero { padding: 120px 0 60px; background-color: var(--secondary-color); text-align: center; }
+        .veille-hero h1 { font-size: 2.8rem; margin-bottom: 1rem; color: var(--accent-color); }
+        .veille-hero .subtitle { font-size: 1.2rem; color: var(--text-secondary); }
+
+        .veille-content { padding: 4rem 0; background: var(--bg-color); }
+
+        .veille-section { margin-bottom: 4rem; padding: 2rem; background-color: var(--primary-color); border-radius: 10px; box-shadow: 0 4px 6px rgba(255,112,67,0.1); }
+        .veille-section h2 { font-size: 2rem; margin-bottom: 2rem; color: var(--accent-color); text-align: center; }
+        .veille-section > p { font-size: 1.1rem; line-height: 1.8; color: var(--text-color); text-align: center; max-width: 800px; margin: 0 auto 1.5rem; }
+
+        .veille-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .veille-card-simple { background: var(--secondary-color); padding: 2rem; border-radius: 10px; text-align: center; transition: var(--transition); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .veille-card-simple:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(255,112,67,0.5); }
+        .veille-card-simple i { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem; display: block; }
+        .veille-card-simple h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-color); }
+        .veille-card-simple p { font-size: 1rem; line-height: 1.6; color: var(--text-secondary); }
+
+        .veille-intro { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 2rem; background: var(--secondary-color); padding: 2rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .veille-intro-text { flex: 1; text-align: left; }
+        .veille-intro-text p { font-size: 1.05rem; line-height: 1.8; color: var(--text-color); text-align: left; margin: 0; }
+        .veille-intro-image { font-size: 4rem; color: var(--accent-color); opacity: 0.8; animation: pulse 2s infinite; }
+
+        .veille-sites-header { text-align: center; margin: 3rem 0 2rem; }
+        .veille-sites-header h3 { color: var(--accent-color); font-size: 2rem; margin-bottom: 1rem; }
+        .veille-sites-header p { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto; }
+
+        .veille-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .veille-card { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); border-radius: 15px; padding: 2rem; text-decoration: none; color: var(--text-color); transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.1); display: block; }
+        .veille-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent); transform: translateX(-100%); transition: 0.6s; }
+        .veille-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 30px rgba(255,112,67,0.2); }
+        .veille-card:hover::before { transform: translateX(100%); }
+        .veille-card-content { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%; }
+        .veille-card h4 { color: var(--accent-color); margin-bottom: 1rem; font-size: 1.5rem; font-weight: 600; }
+        .veille-card p { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
+        .veille-card-footer { margin-top: auto; }
+        .veille-card-link { color: var(--accent-color); font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; }
+        .veille-card:hover .veille-card-link { transform: translateX(5px); }
+        .veille-card-icon { position: absolute; bottom: 1.5rem; right: 1.5rem; font-size: 2.5rem; color: var(--accent-color); opacity: 0.2; transition: all 0.3s ease; }
+        .veille-card:hover .veille-card-icon { opacity: 0.6; transform: scale(1.2) rotate(5deg); }
+
+        footer { background-color: var(--secondary-color); padding: 3rem 2rem 1rem; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .footer-section h3 { color: var(--accent-color); margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.5rem; }
+        .footer-section a { color: var(--text-secondary); text-decoration: none; transition: var(--transition); }
+        .footer-section a:hover { color: var(--accent-color); }
+        .footer-bottom { text-align: center; padding: 1rem 0; border-top: 1px solid rgba(93,64,55,0.2); margin-top: 2rem; }
+        .footer-bottom p { color: var(--text-color); font-size: 0.9rem; }
+
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: rgba(250,243,224,0.98); padding: 1rem 2rem; }
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: block; }
+            .veille-hero h1 { font-size: 2rem; }
+            .veille-intro { flex-direction: column; text-align: center; }
+            .veille-intro-text p { text-align: center; }
+            .veille-cards { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Accueil</a>
+            <a href="presentation.html">Ma présentation</a>
+            <a href="bts-sio.html">BTS SIO</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="projets.html">Projets</a>
+            <a href="veille.html" class="active">Veille</a>
+        </div>
+        <div class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <section class="veille-hero">
+        <div class="container">
+            <h1>Veille Technologique</h1>
+            <p class="subtitle">Suivi des dernières innovations et tendances en informatique</p>
+        </div>
+    </section>
+
+    <div class="veille-content">
+        <div class="container">
+
+            <div class="veille-section">
+                <h2>Qu'est-ce que la veille technologique ?</h2>
+                <p>La veille technologique est un processus continu de surveillance et d'analyse des évolutions technologiques dans un domaine spécifique. C'est une activité essentielle pour rester à jour dans le monde de l'informatique en constante évolution.</p>
+                <div class="veille-grid">
+                    <div class="veille-card-simple">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Innovation</h3>
+                        <p>Identifier les nouvelles technologies et solutions émergentes pour rester compétitif.</p>
+                    </div>
+                    <div class="veille-card-simple">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Sécurité</h3>
+                        <p>Se tenir informé des nouvelles menaces et vulnérabilités pour protéger les systèmes.</p>
+                    </div>
+                    <div class="veille-card-simple">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h3>Performance</h3>
+                        <p>Découvrir des outils et méthodes pour optimiser les infrastructures existantes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="veille-section">
+                <h2>Ma Veille sur les Applications Blockchain</h2>
+                <div class="veille-intro">
+                    <div class="veille-intro-text">
+                        <p>Pour recueillir de nouvelles informations, la méthode de veille automatique est utilisée. Pour cela, j'utilise <strong>Feedly</strong>, une application web basée sur les flux RSS qui permet de rassembler automatiquement des articles sur divers sujets, notamment les applications blockchain.</p>
+                    </div>
+                    <div class="veille-intro-image">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                </div>
+
+                <div class="veille-sites-header">
+                    <h3>Mes Sources de Veille</h3>
+                    <p>Voici les sites que je consulte régulièrement pour rester informé des dernières actualités sur les applications blockchain :</p>
+                </div>
+
+                <div class="veille-cards">
+
+                    <a href="https://cryptoast.fr" target="_blank" class="veille-card">
+                        <div class="veille-card-content">
+                            <h4>Cryptoast</h4>
+                            <p>Référence francophone sur la blockchain, les cryptomonnaies et les applications décentralisées. Actualités, analyses et guides pédagogiques.</p>
+                            <div class="veille-card-footer">
+                                <span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-newspaper veille-card-icon"></i>
+                    </a>
+
+                    <a href="https://www.journalducoin.com" target="_blank" class="veille-card">
+                        <div class="veille-card-content">
+                            <h4>Journal du Coin</h4>
+                            <p>Média francophone spécialisé dans l'actualité blockchain, DeFi, NFT et Web3. Articles quotidiens sur les évolutions de l'écosystème.</p>
+                            <div class="veille-card-footer">
+                                <span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-coins veille-card-icon"></i>
+                    </a>
+
+                    <a href="https://coinacademy.fr" target="_blank" class="veille-card">
+                        <div class="veille-card-content">
+                            <h4>CoinAcademy</h4>
+                            <p>Site éducatif francophone dédié à la blockchain et aux cryptomonnaies. Explications claires sur les smart contracts, la DeFi et les dApps.</p>
+                            <div class="veille-card-footer">
+                                <span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-graduation-cap veille-card-icon"></i>
+                    </a>
+
+                    <a href="https://www.ethereum.org/fr" target="_blank" class="veille-card">
+                        <div class="veille-card-content">
+                            <h4>Ethereum.org</h4>
+                            <p>Site officiel d'Ethereum, la principale plateforme de développement d'applications blockchain. Ressources techniques sur les smart contracts et les dApps.</p>
+                            <div class="veille-card-footer">
+                                <span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span>
+                            </div>
+                        </div>
+                        <i class="fab fa-ethereum veille-card-icon"></i>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li><li><a href="presentation.html">Ma présentation</a></li>
+                    <li><a href="bts-sio.html">BTS SIO</a></li><li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="projets.html">Projets</a></li><li><a href="veille.html">Veille</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>© 2025 ATTAL Sofiane. Tous droits réservés.</p></div>
+    </footer>
+</body>
+</html>
