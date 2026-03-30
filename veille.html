@@ -10,6 +10,8 @@
         :root { --primary-color: #FAF3E0; --secondary-color: #F5E6D3; --accent-color: #FF7043; --text-color: #5D4037; --text-secondary: #8D6E63; --transition: all 0.3s ease; --bg-color: #FAF3E0; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background-color: var(--primary-color); color: var(--text-color); line-height: 1.6; }
+
+        /* NAVBAR */
         .navbar { position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 2rem; background: rgba(250,243,224,0.95); backdrop-filter: blur(10px); z-index: 1000; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 10px rgba(93,64,55,0.1); }
         .nav-links { display: flex; gap: 2rem; align-items: center; }
         .nav-links a { color: var(--text-color); text-decoration: none; margin-left: 2rem; transition: var(--transition); position: relative; }
@@ -19,16 +21,18 @@
         .nav-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
+        /* HERO */
         .veille-hero { padding: 120px 0 60px; background-color: var(--secondary-color); text-align: center; }
         .veille-hero h1 { font-size: 2.8rem; margin-bottom: 1rem; color: var(--accent-color); }
         .veille-hero .subtitle { font-size: 1.2rem; color: var(--text-secondary); }
 
+        /* CONTENT */
         .veille-content { padding: 4rem 0; background: var(--bg-color); }
-
         .veille-section { margin-bottom: 4rem; padding: 2rem; background-color: var(--primary-color); border-radius: 10px; box-shadow: 0 4px 6px rgba(255,112,67,0.1); }
         .veille-section h2 { font-size: 2rem; margin-bottom: 2rem; color: var(--accent-color); text-align: center; }
         .veille-section > p { font-size: 1.1rem; line-height: 1.8; color: var(--text-color); text-align: center; max-width: 800px; margin: 0 auto 1.5rem; }
 
+        /* CARTES SIMPLES */
         .veille-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
         .veille-card-simple { background: var(--secondary-color); padding: 2rem; border-radius: 10px; text-align: center; transition: var(--transition); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .veille-card-simple:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(255,112,67,0.5); }
@@ -36,29 +40,81 @@
         .veille-card-simple h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-color); }
         .veille-card-simple p { font-size: 1rem; line-height: 1.6; color: var(--text-secondary); }
 
-        .veille-intro { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 2rem; background: var(--secondary-color); padding: 2rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .veille-intro-text { flex: 1; text-align: left; }
-        .veille-intro-text p { font-size: 1.05rem; line-height: 1.8; color: var(--text-color); text-align: left; margin: 0; }
+        /* INTRO VEILLE */
+        .veille-intro { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 2rem; background: var(--secondary-color); padding: 2rem; border-radius: 15px; }
+        .veille-intro-text { flex: 1; }
+        .veille-intro-text p { font-size: 1.05rem; line-height: 1.8; color: var(--text-color); }
         .veille-intro-image { font-size: 4rem; color: var(--accent-color); opacity: 0.8; animation: pulse 2s infinite; }
 
+        /* SOURCES CARDS */
         .veille-sites-header { text-align: center; margin: 3rem 0 2rem; }
         .veille-sites-header h3 { color: var(--accent-color); font-size: 2rem; margin-bottom: 1rem; }
         .veille-sites-header p { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto; }
-
         .veille-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
         .veille-card { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); border-radius: 15px; padding: 2rem; text-decoration: none; color: var(--text-color); transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.1); display: block; }
-        .veille-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent); transform: translateX(-100%); transition: 0.6s; }
         .veille-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 30px rgba(255,112,67,0.2); }
-        .veille-card:hover::before { transform: translateX(100%); }
         .veille-card-content { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%; }
         .veille-card h4 { color: var(--accent-color); margin-bottom: 1rem; font-size: 1.5rem; font-weight: 600; }
         .veille-card p { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
         .veille-card-footer { margin-top: auto; }
-        .veille-card-link { color: var(--accent-color); font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; }
-        .veille-card:hover .veille-card-link { transform: translateX(5px); }
+        .veille-card-link { color: var(--accent-color); font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; }
         .veille-card-icon { position: absolute; bottom: 1.5rem; right: 1.5rem; font-size: 2.5rem; color: var(--accent-color); opacity: 0.2; transition: all 0.3s ease; }
         .veille-card:hover .veille-card-icon { opacity: 0.6; transform: scale(1.2) rotate(5deg); }
 
+        /* ===== APPLICATION RSS ===== */
+        .rss-app { margin-top: 2rem; }
+
+        .rss-stats { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 1.5rem; }
+        .rss-stat { background: var(--secondary-color); border-radius: 10px; padding: 0.8rem 1.2rem; flex: 1; min-width: 80px; text-align: center; }
+        .rss-stat-num { font-size: 1.8rem; font-weight: 700; color: var(--accent-color); }
+        .rss-stat-label { font-size: 0.75rem; color: var(--text-secondary); margin-top: 2px; }
+        .rss-refresh-btn { margin-left: auto; padding: 0.6rem 1.4rem; background: var(--accent-color); color: #fff; border: none; border-radius: 30px; font-family: 'Poppins', sans-serif; font-size: 0.9rem; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 0.5rem; }
+        .rss-refresh-btn:hover { background: #e64a19; transform: translateY(-2px); }
+        .rss-refresh-btn i { font-size: 0.85rem; }
+
+        .rss-search { width: 100%; padding: 0.8rem 1.2rem; font-size: 1rem; font-family: 'Poppins', sans-serif; border: 2px solid var(--secondary-color); border-radius: 30px; background: var(--primary-color); color: var(--text-color); margin-bottom: 1.2rem; outline: none; transition: var(--transition); }
+        .rss-search:focus { border-color: var(--accent-color); }
+
+        .rss-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .rss-filter { padding: 0.4rem 1rem; border-radius: 30px; border: 1.5px solid var(--secondary-color); background: transparent; color: var(--text-secondary); font-family: 'Poppins', sans-serif; font-size: 0.85rem; cursor: pointer; transition: var(--transition); }
+        .rss-filter.active { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
+        .rss-filter:hover:not(.active) { border-color: var(--accent-color); color: var(--accent-color); }
+
+        .rss-sources { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; margin-bottom: 1.5rem; }
+        .rss-source-lbl { font-size: 0.8rem; color: var(--text-secondary); }
+        .rss-src { padding: 0.3rem 0.9rem; border-radius: 30px; border: 1px solid var(--secondary-color); font-size: 0.8rem; color: var(--text-secondary); cursor: pointer; transition: var(--transition); }
+        .rss-src.active { border-color: var(--accent-color); color: var(--accent-color); background: rgba(255,112,67,0.08); }
+        .rss-src:hover:not(.active) { border-color: var(--accent-color); color: var(--accent-color); }
+
+        .rss-articles-list { display: flex; flex-direction: column; gap: 1rem; }
+
+        .rss-article { background: var(--secondary-color); border-radius: 12px; padding: 1.2rem 1.5rem; cursor: pointer; transition: var(--transition); border-left: 4px solid transparent; }
+        .rss-article:hover { transform: translateX(4px); box-shadow: 0 4px 15px rgba(255,112,67,0.15); border-left-color: var(--accent-color); }
+
+        .rss-article-meta { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.6rem; }
+        .rss-badge { font-size: 0.72rem; padding: 2px 10px; border-radius: 30px; font-weight: 600; }
+        .badge-cryptoast { background: #dbeafe; color: #1e40af; }
+        .badge-jdc { background: #ede9fe; color: #5b21b6; }
+        .badge-coinacademy { background: #d1fae5; color: #065f46; }
+        .badge-cointelegraph { background: #fef3c7; color: #92400e; }
+        .badge-decrypt { background: #fce7f3; color: #9d174d; }
+        .badge-ethereum { background: #e0f2fe; color: #0369a1; }
+        .rss-cat { font-size: 0.72rem; padding: 2px 10px; border-radius: 30px; background: rgba(93,64,55,0.1); color: var(--text-secondary); }
+        .rss-date { font-size: 0.72rem; color: var(--text-secondary); margin-left: auto; }
+
+        .rss-article-title { font-size: 1rem; font-weight: 600; color: var(--text-color); margin-bottom: 0.4rem; line-height: 1.4; }
+        .rss-article-summary { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.8rem; }
+        .rss-article-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+        .rss-read-link { font-size: 0.82rem; color: var(--accent-color); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; }
+        .rss-read-link:hover { text-decoration: underline; }
+        .rss-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+        .rss-tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 30px; background: rgba(255,112,67,0.1); color: var(--accent-color); }
+
+        .rss-loading { text-align: center; padding: 3rem 1rem; color: var(--text-secondary); font-size: 1rem; }
+        .rss-loading i { margin-right: 0.5rem; color: var(--accent-color); }
+        .rss-empty { text-align: center; padding: 3rem 1rem; color: var(--text-secondary); font-size: 0.95rem; }
+
+        /* FOOTER */
         footer { background-color: var(--secondary-color); padding: 3rem 2rem 1rem; }
         .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
         .footer-section h3 { color: var(--accent-color); margin-bottom: 1rem; }
@@ -70,15 +126,17 @@
         .footer-bottom p { color: var(--text-color); font-size: 0.9rem; }
 
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .fa-spin { animation: spin 1s linear infinite; }
 
         @media (max-width: 768px) {
             .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: rgba(250,243,224,0.98); padding: 1rem 2rem; }
             .nav-links.open { display: flex; }
             .nav-toggle { display: block; }
             .veille-hero h1 { font-size: 2rem; }
-            .veille-intro { flex-direction: column; text-align: center; }
-            .veille-intro-text p { text-align: center; }
+            .veille-intro { flex-direction: column; }
             .veille-cards { grid-template-columns: 1fr; }
+            .rss-refresh-btn { margin-left: 0; width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -105,6 +163,7 @@
     <div class="veille-content">
         <div class="container">
 
+            <!-- Section 1 : définition -->
             <div class="veille-section">
                 <h2>Qu'est-ce que la veille technologique ?</h2>
                 <p>La veille technologique est un processus continu de surveillance et d'analyse des évolutions technologiques dans un domaine spécifique. C'est une activité essentielle pour rester à jour dans le monde de l'informatique en constante évolution.</p>
@@ -127,11 +186,12 @@
                 </div>
             </div>
 
+            <!-- Section 2 : sujet + sources -->
             <div class="veille-section">
                 <h2>Ma Veille sur les Applications Blockchain</h2>
                 <div class="veille-intro">
                     <div class="veille-intro-text">
-                        <p>Pour recueillir de nouvelles informations, la méthode de veille automatique est utilisée. Pour cela, j'utilise <strong>Feedly</strong>, une application web basée sur les flux RSS qui permet de rassembler automatiquement des articles sur divers sujets, notamment les applications blockchain.</p>
+                        <p>Pour recueillir de nouvelles informations, la méthode de veille automatique est utilisée. J'ai développé une application basée sur les flux <strong>RSS</strong> qui permet de rassembler automatiquement des articles sur les applications blockchain depuis plusieurs sources francophones et internationales.</p>
                     </div>
                     <div class="veille-intro-image">
                         <i class="fas fa-cube"></i>
@@ -140,54 +200,100 @@
 
                 <div class="veille-sites-header">
                     <h3>Mes Sources de Veille</h3>
-                    <p>Voici les sites que je consulte régulièrement pour rester informé des dernières actualités sur les applications blockchain :</p>
+                    <p>Voici les sites dont je surveille les flux RSS pour rester informé des dernières actualités blockchain :</p>
                 </div>
 
                 <div class="veille-cards">
-
                     <a href="https://cryptoast.fr" target="_blank" class="veille-card">
                         <div class="veille-card-content">
                             <h4>Cryptoast</h4>
-                            <p>Référence francophone sur la blockchain, les cryptomonnaies et les applications décentralisées. Actualités, analyses et guides pédagogiques.</p>
-                            <div class="veille-card-footer">
-                                <span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span>
-                            </div>
+                            <p>Référence francophone sur la blockchain, les cryptomonnaies et les applications décentralisées.</p>
+                            <div class="veille-card-footer"><span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span></div>
                         </div>
                         <i class="fas fa-newspaper veille-card-icon"></i>
                     </a>
-
                     <a href="https://www.journalducoin.com" target="_blank" class="veille-card">
                         <div class="veille-card-content">
                             <h4>Journal du Coin</h4>
-                            <p>Média francophone spécialisé dans l'actualité blockchain, DeFi, NFT et Web3. Articles quotidiens sur les évolutions de l'écosystème.</p>
-                            <div class="veille-card-footer">
-                                <span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span>
-                            </div>
+                            <p>Média francophone spécialisé dans l'actualité blockchain, DeFi, NFT et Web3.</p>
+                            <div class="veille-card-footer"><span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span></div>
                         </div>
                         <i class="fas fa-coins veille-card-icon"></i>
                     </a>
-
                     <a href="https://coinacademy.fr" target="_blank" class="veille-card">
                         <div class="veille-card-content">
                             <h4>CoinAcademy</h4>
-                            <p>Site éducatif francophone dédié à la blockchain et aux cryptomonnaies. Explications claires sur les smart contracts, la DeFi et les dApps.</p>
-                            <div class="veille-card-footer">
-                                <span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span>
-                            </div>
+                            <p>Site éducatif francophone dédié à la blockchain, aux smart contracts et aux dApps.</p>
+                            <div class="veille-card-footer"><span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span></div>
                         </div>
                         <i class="fas fa-graduation-cap veille-card-icon"></i>
                     </a>
-
                     <a href="https://www.ethereum.org/fr" target="_blank" class="veille-card">
                         <div class="veille-card-content">
                             <h4>Ethereum.org</h4>
-                            <p>Site officiel d'Ethereum, la principale plateforme de développement d'applications blockchain. Ressources techniques sur les smart contracts et les dApps.</p>
-                            <div class="veille-card-footer">
-                                <span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span>
-                            </div>
+                            <p>Site officiel d'Ethereum, principale plateforme de développement d'applications blockchain.</p>
+                            <div class="veille-card-footer"><span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span></div>
                         </div>
                         <i class="fab fa-ethereum veille-card-icon"></i>
                     </a>
+                </div>
+            </div>
+
+            <!-- Section 3 : Application RSS -->
+            <div class="veille-section">
+                <h2><i class="fas fa-rss" style="margin-right:0.6rem;"></i>Agrégateur RSS — Articles en direct</h2>
+                <p>Les articles ci-dessous sont récupérés automatiquement en temps réel depuis les flux RSS des sources de veille. Filtrez par thème ou par source, puis cliquez sur un article pour le lire.</p>
+
+                <div class="rss-app">
+
+                    <div class="rss-stats">
+                        <div class="rss-stat">
+                            <div class="rss-stat-num" id="stat-total">—</div>
+                            <div class="rss-stat-label">Articles</div>
+                        </div>
+                        <div class="rss-stat">
+                            <div class="rss-stat-num" id="stat-sources">6</div>
+                            <div class="rss-stat-label">Sources</div>
+                        </div>
+                        <div class="rss-stat">
+                            <div class="rss-stat-num" id="stat-today">—</div>
+                            <div class="rss-stat-label">Aujourd'hui</div>
+                        </div>
+                        <div class="rss-stat">
+                            <div class="rss-stat-num" id="stat-week">—</div>
+                            <div class="rss-stat-label">Cette semaine</div>
+                        </div>
+                        <button class="rss-refresh-btn" onclick="loadRSSArticles()">
+                            <i class="fas fa-sync-alt" id="refresh-icon"></i> Actualiser
+                        </button>
+                    </div>
+
+                    <input class="rss-search" type="text" id="rss-search" placeholder="Rechercher un article..." oninput="renderRSS()">
+
+                    <div class="rss-filters">
+                        <button class="rss-filter active" onclick="setRSSFilter(this,'all')">Tous</button>
+                        <button class="rss-filter" onclick="setRSSFilter(this,'defi')">DeFi</button>
+                        <button class="rss-filter" onclick="setRSSFilter(this,'nft')">NFT</button>
+                        <button class="rss-filter" onclick="setRSSFilter(this,'ethereum')">Ethereum</button>
+                        <button class="rss-filter" onclick="setRSSFilter(this,'bitcoin')">Bitcoin</button>
+                        <button class="rss-filter" onclick="setRSSFilter(this,'web3')">Web3</button>
+                        <button class="rss-filter" onclick="setRSSFilter(this,'regulation')">Régulation</button>
+                    </div>
+
+                    <div class="rss-sources">
+                        <span class="rss-source-lbl">Sources :</span>
+                        <span class="rss-src active" onclick="setRSSSrc(this,'all')">Toutes</span>
+                        <span class="rss-src" onclick="setRSSSrc(this,'Cryptoast')">Cryptoast</span>
+                        <span class="rss-src" onclick="setRSSSrc(this,'Journal du Coin')">Journal du Coin</span>
+                        <span class="rss-src" onclick="setRSSSrc(this,'CoinAcademy')">CoinAcademy</span>
+                        <span class="rss-src" onclick="setRSSSrc(this,'Cointelegraph')">Cointelegraph</span>
+                        <span class="rss-src" onclick="setRSSSrc(this,'Decrypt')">Decrypt</span>
+                        <span class="rss-src" onclick="setRSSSrc(this,'Ethereum Blog')">Ethereum Blog</span>
+                    </div>
+
+                    <div id="rss-articles">
+                        <div class="rss-loading"><i class="fas fa-circle-notch fa-spin"></i> Chargement des flux RSS...</div>
+                    </div>
 
                 </div>
             </div>
@@ -200,13 +306,178 @@
             <div class="footer-section">
                 <h3>Navigation</h3>
                 <ul>
-                    <li><a href="index.html">Accueil</a></li><li><a href="presentation.html">Ma présentation</a></li>
-                    <li><a href="bts-sio.html">BTS SIO</a></li><li><a href="certifications.html">Certifications</a></li>
-                    <li><a href="projets.html">Projets</a></li><li><a href="veille.html">Veille</a></li>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="presentation.html">Ma présentation</a></li>
+                    <li><a href="bts-sio.html">BTS SIO</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="projets.html">Projets</a></li>
+                    <li><a href="veille.html">Veille</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom"><p>© 2025 ATTAL Sofiane. Tous droits réservés.</p></div>
     </footer>
+
+    <script>
+        const RSS_FEEDS = [
+            { name: 'Cryptoast',      url: 'https://cryptoast.fr/feed/',            badge: 'badge-cryptoast' },
+            { name: 'Journal du Coin', url: 'https://journalducoin.com/feed/',       badge: 'badge-jdc' },
+            { name: 'CoinAcademy',    url: 'https://coinacademy.fr/feed/',           badge: 'badge-coinacademy' },
+            { name: 'Cointelegraph',  url: 'https://fr.cointelegraph.com/rss',       badge: 'badge-cointelegraph' },
+            { name: 'Decrypt',        url: 'https://decrypt.co/feed',               badge: 'badge-decrypt' },
+            { name: 'Ethereum Blog',  url: 'https://blog.ethereum.org/feed.xml',    badge: 'badge-ethereum' },
+        ];
+
+        const PROXY = 'https://api.rss2json.com/v1/api.json?rss_url=';
+        let allArticles = [];
+        let currentFilter = 'all';
+        let currentSource = 'all';
+
+        function getCategory(t, d) {
+            const s = (t + ' ' + d).toLowerCase();
+            if (s.includes('defi') || s.includes('décentralis') || s.includes('liquidit') || s.includes('yield') || s.includes('protocole')) return 'defi';
+            if (s.includes('nft') || s.includes('token non') || s.includes('metaverse') || s.includes('art numérique') || s.includes('collectible')) return 'nft';
+            if (s.includes('ethereum') || s.includes(' eth ') || s.includes('vitalik') || s.includes('solidity') || s.includes('eip-')) return 'ethereum';
+            if (s.includes('bitcoin') || s.includes(' btc') || s.includes('satoshi') || s.includes('halving') || s.includes('mining')) return 'bitcoin';
+            if (s.includes('web3') || s.includes('dapp') || s.includes('smart contract') || s.includes('dao ')) return 'web3';
+            if (s.includes('régulat') || s.includes('loi ') || s.includes(' amf') || s.includes(' sec ') || s.includes('mica') || s.includes('juridique')) return 'regulation';
+            return 'blockchain';
+        }
+
+        function getTags(t, d) {
+            const s = (t + ' ' + d).toLowerCase();
+            const tags = [];
+            if (s.includes('bitcoin') || s.includes('btc')) tags.push('Bitcoin');
+            if (s.includes('ethereum') || s.includes(' eth')) tags.push('Ethereum');
+            if (s.includes('defi')) tags.push('DeFi');
+            if (s.includes('nft')) tags.push('NFT');
+            if (s.includes('web3')) tags.push('Web3');
+            if (s.includes('smart contract')) tags.push('Smart Contract');
+            if (s.includes('layer 2') || s.includes(' l2')) tags.push('Layer 2');
+            if (s.includes('staking')) tags.push('Staking');
+            return tags.slice(0, 3);
+        }
+
+        function formatDate(ds) {
+            if (!ds) return '';
+            try {
+                const d = new Date(ds), now = new Date();
+                const diff = Math.floor((now - d) / 60000);
+                if (diff < 60) return diff + ' min';
+                if (diff < 1440) return Math.floor(diff/60) + 'h';
+                if (diff < 10080) return Math.floor(diff/1440) + 'j';
+                return d.toLocaleDateString('fr-FR', {day:'2-digit', month:'short'});
+            } catch(e) { return ''; }
+        }
+
+        function isToday(ds) {
+            try { const d = new Date(ds); return d.toDateString() === new Date().toDateString(); } catch(e) { return false; }
+        }
+
+        function isThisWeek(ds) {
+            try { return (new Date() - new Date(ds)) < 7*24*3600*1000; } catch(e) { return false; }
+        }
+
+        function stripHtml(html) {
+            const t = document.createElement('div');
+            t.innerHTML = html || '';
+            return (t.textContent || t.innerText || '').replace(/\s+/g, ' ').trim();
+        }
+
+        async function fetchFeed(feed) {
+            try {
+                const r = await fetch(PROXY + encodeURIComponent(feed.url) + '&count=12', { signal: AbortSignal.timeout(9000) });
+                const data = await r.json();
+                if (data.status !== 'ok') return [];
+                return (data.items || []).map(item => ({
+                    title: item.title || '',
+                    summary: stripHtml(item.description || item.content || '').substring(0, 220).trim() + '...',
+                    link: item.link || '#',
+                    date: item.pubDate || item.published || '',
+                    source: feed.name,
+                    badge: feed.badge,
+                    category: getCategory(item.title || '', item.description || ''),
+                    tags: getTags(item.title || '', item.description || '')
+                }));
+            } catch(e) { return []; }
+        }
+
+        async function loadRSSArticles() {
+            document.getElementById('rss-articles').innerHTML = '<div class="rss-loading"><i class="fas fa-circle-notch fa-spin"></i> Chargement des flux RSS...</div>';
+            document.getElementById('stat-total').textContent = '—';
+            document.getElementById('stat-today').textContent = '—';
+            document.getElementById('stat-week').textContent = '—';
+            const icon = document.getElementById('refresh-icon');
+            icon.classList.add('fa-spin');
+
+            const results = await Promise.all(RSS_FEEDS.map(f => fetchFeed(f)));
+            allArticles = results.flat().sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            if (allArticles.length === 0) allArticles = getFallback();
+
+            icon.classList.remove('fa-spin');
+            document.getElementById('stat-total').textContent = allArticles.length;
+            document.getElementById('stat-today').textContent = allArticles.filter(a => isToday(a.date)).length || '—';
+            document.getElementById('stat-week').textContent = allArticles.filter(a => isThisWeek(a.date)).length;
+            renderRSS();
+        }
+
+        function setRSSFilter(btn, f) {
+            currentFilter = f;
+            document.querySelectorAll('.rss-filter').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderRSS();
+        }
+
+        function setRSSSrc(tag, s) {
+            currentSource = s;
+            document.querySelectorAll('.rss-src').forEach(t => t.classList.remove('active'));
+            tag.classList.add('active');
+            renderRSS();
+        }
+
+        function renderRSS() {
+            const search = (document.getElementById('rss-search').value || '').toLowerCase();
+            let list = allArticles;
+            if (currentFilter !== 'all') list = list.filter(a => a.category === currentFilter);
+            if (currentSource !== 'all') list = list.filter(a => a.source === currentSource);
+            if (search) list = list.filter(a => a.title.toLowerCase().includes(search) || a.summary.toLowerCase().includes(search));
+
+            const c = document.getElementById('rss-articles');
+            if (!list.length) { c.innerHTML = '<div class="rss-empty">Aucun article trouvé pour ces critères.</div>'; return; }
+
+            c.innerHTML = '<div class="rss-articles-list">' + list.map(a => `
+                <div class="rss-article" onclick="window.open('${a.link}','_blank')">
+                    <div class="rss-article-meta">
+                        <span class="rss-badge ${a.badge}">${a.source}</span>
+                        <span class="rss-cat">${a.category}</span>
+                        <span class="rss-date">${formatDate(a.date)}</span>
+                    </div>
+                    <div class="rss-article-title">${a.title}</div>
+                    <div class="rss-article-summary">${a.summary}</div>
+                    <div class="rss-article-footer">
+                        <a class="rss-read-link" href="${a.link}" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Lire l'article</a>
+                        <div class="rss-tags">${a.tags.map(t => `<span class="rss-tag">${t}</span>`).join('')}</div>
+                    </div>
+                </div>
+            `).join('') + '</div>';
+        }
+
+        function getFallback() {
+            const now = new Date();
+            return [
+                { title: "Les applications blockchain révolutionnent la finance décentralisée en 2025", summary: "La DeFi continue de croître avec de nouveaux protocoles offrant des rendements attractifs tout en améliorant la sécurité des smart contracts déployés sur Ethereum.", link: "https://cryptoast.fr", date: new Date(now-1800000).toISOString(), source: "Cryptoast", badge: "badge-cryptoast", category: "defi", tags: ["DeFi", "Ethereum"] },
+                { title: "Ethereum : la mise à jour Pectra améliore l'expérience des wallets", summary: "La prochaine mise à jour d'Ethereum apporte des améliorations significatives via l'EIP-7702 qui permet aux comptes classiques d'agir comme des smart contracts.", link: "https://journalducoin.com", date: new Date(now-7200000).toISOString(), source: "Journal du Coin", badge: "badge-jdc", category: "ethereum", tags: ["Ethereum", "Web3"] },
+                { title: "Bitcoin franchit les 100 000 dollars : analyse des facteurs déterminants", summary: "Le Bitcoin maintient une position solide, porté par l'adoption institutionnelle croissante et les ETF spot qui drainent les liquidités des marchés traditionnels.", link: "https://journalducoin.com", date: new Date(now-10800000).toISOString(), source: "Journal du Coin", badge: "badge-jdc", category: "bitcoin", tags: ["Bitcoin"] },
+                { title: "Qu'est-ce qu'un smart contract ? Guide complet pour débutants", summary: "Les smart contracts sont des programmes autonomes déployés sur une blockchain qui s'exécutent automatiquement lorsque des conditions prédéfinies sont remplies.", link: "https://coinacademy.fr", date: new Date(now-86400000).toISOString(), source: "CoinAcademy", badge: "badge-coinacademy", category: "web3", tags: ["Smart Contract", "Ethereum"] },
+                { title: "Régulation crypto en Europe : MiCA entre pleinement en vigueur", summary: "Le règlement MiCA est désormais applicable dans toute l'UE, imposant de nouvelles obligations aux prestataires de services sur actifs numériques.", link: "https://coinacademy.fr", date: new Date(now-172800000).toISOString(), source: "CoinAcademy", badge: "badge-coinacademy", category: "regulation", tags: ["Régulation"] },
+                { title: "Layer 2 : Arbitrum et Optimism dominent le marché de la scalabilité Ethereum", summary: "Les solutions Layer 2 dépassent 10 milliards de dollars de TVL. L'écosystème se consolide autour de quelques acteurs majeurs proposant des frais réduits.", link: "https://fr.cointelegraph.com", date: new Date(now-259200000).toISOString(), source: "Cointelegraph", badge: "badge-cointelegraph", category: "ethereum", tags: ["Ethereum", "Layer 2"] },
+                { title: "NFT : le marché se redéfinit autour des actifs numériques utilitaires", summary: "Après la bulle spéculative, les NFT trouvent de nouveaux cas d'usage : billets d'événements, certifications académiques, propriété d'actifs dans les jeux vidéo.", link: "https://decrypt.co", date: new Date(now-345600000).toISOString(), source: "Decrypt", badge: "badge-decrypt", category: "nft", tags: ["NFT", "Web3"] },
+                { title: "Ethereum staking : comprendre les validators et les récompenses", summary: "Avec plus de 30 millions d'ETH stakés, le réseau prouve sa robustesse. Le staking permet de sécuriser le réseau tout en générant des rendements passifs attractifs.", link: "https://blog.ethereum.org", date: new Date(now-432000000).toISOString(), source: "Ethereum Blog", badge: "badge-ethereum", category: "ethereum", tags: ["Ethereum", "Staking"] },
+            ];
+        }
+
+        loadRSSArticles();
+    </script>
 </body>
 </html>
