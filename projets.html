@@ -88,31 +88,217 @@
 
             <div class="projet-card">
                 <div class="projet-image">
-                    <img src="images/projet1.png" alt="Voyage en C#">
+                    <div class="projet-illustration" style="width:100%; height:200px; background: linear-gradient(135deg, #2C3E50 0%, #3D5A80 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+                        <!-- Grille de personnages style "Qui est-ce" -->
+                        <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="200" fill="url(#bgGrad)"/>
+                            <defs>
+                                <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#1a2a3a"/>
+                                    <stop offset="100%" style="stop-color:#2d4a6a"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Titre -->
+                            <text x="200" y="28" text-anchor="middle" fill="#FF7043" font-size="15" font-family="Poppins, sans-serif" font-weight="700">Qui est-ce ?</text>
+                            <text x="200" y="44" text-anchor="middle" fill="#aac4e0" font-size="9" font-family="Poppins, sans-serif">1 mensonge autorisé</text>
+                            <!-- Grille 6x2 de personnages -->
+                            <!-- Rangée 1 -->
+                            <g transform="translate(30,60)">
+                                <rect width="44" height="54" rx="6" fill="#243447" stroke="#FF7043" stroke-width="1.5"/>
+                                <circle cx="22" cy="18" r="10" fill="#4a90a4"/>
+                                <rect x="8" y="32" width="28" height="16" rx="3" fill="#3a7a8a"/>
+                                <text x="22" y="62" text-anchor="middle" fill="#aac4e0" font-size="7" font-family="Poppins">René</text>
+                            </g>
+                            <g transform="translate(84,60)">
+                                <rect width="44" height="54" rx="6" fill="#243447" stroke="#4a8fa4" stroke-width="1"/>
+                                <circle cx="22" cy="18" r="10" fill="#c0855a"/>
+                                <rect x="8" y="32" width="28" height="16" rx="3" fill="#a06040"/>
+                                <text x="22" y="62" text-anchor="middle" fill="#aac4e0" font-size="7" font-family="Poppins">Marie</text>
+                            </g>
+                            <g transform="translate(138,60)">
+                                <rect width="44" height="54" rx="6" fill="#243447" stroke="#4a8fa4" stroke-width="1"/>
+                                <circle cx="22" cy="18" r="10" fill="#7ab87a"/>
+                                <rect x="8" y="32" width="28" height="16" rx="3" fill="#5a9a5a"/>
+                                <text x="22" y="62" text-anchor="middle" fill="#aac4e0" font-size="7" font-family="Poppins">Paul</text>
+                            </g>
+                            <g transform="translate(192,60)">
+                                <rect width="44" height="54" rx="6" fill="#243447" stroke="#4a8fa4" stroke-width="1"/>
+                                <circle cx="22" cy="18" r="10" fill="#e8b86d"/>
+                                <rect x="8" y="32" width="28" height="16" rx="3" fill="#c09050"/>
+                                <text x="22" y="62" text-anchor="middle" fill="#aac4e0" font-size="7" font-family="Poppins">Sophie</text>
+                            </g>
+                            <g transform="translate(246,60)">
+                                <rect width="44" height="54" rx="6" fill="#243447" stroke="#4a8fa4" stroke-width="1"/>
+                                <circle cx="22" cy="18" r="10" fill="#9a7ab8"/>
+                                <rect x="8" y="32" width="28" height="16" rx="3" fill="#7a5a9a"/>
+                                <text x="22" y="62" text-anchor="middle" fill="#aac4e0" font-size="7" font-family="Poppins">Louis</text>
+                            </g>
+                            <g transform="translate(300,60)">
+                                <rect width="44" height="54" rx="6" fill="#243447" stroke="#4a8fa4" stroke-width="1"/>
+                                <circle cx="22" cy="18" r="10" fill="#e87a7a"/>
+                                <rect x="8" y="32" width="28" height="16" rx="3" fill="#c05050"/>
+                                <text x="22" y="62" text-anchor="middle" fill="#aac4e0" font-size="7" font-family="Poppins">Claire</text>
+                            </g>
+                            <!-- Rangée 2 -->
+                            <g transform="translate(57,128)">
+                                <rect width="44" height="54" rx="6" fill="#243447" stroke="#4a8fa4" stroke-width="1"/>
+                                <circle cx="22" cy="18" r="10" fill="#7ac4c4"/>
+                                <rect x="8" y="32" width="28" height="16" rx="3" fill="#5aa0a0"/>
+                                <text x="22" y="62" text-anchor="middle" fill="#aac4e0" font-size="7" font-family="Poppins">Hugo</text>
+                            </g>
+                            <g transform="translate(111,128)">
+                                <rect width="44" height="54" rx="6" fill="#1a2a3a" stroke="#FF7043" stroke-width="2"/>
+                                <circle cx="22" cy="18" r="10" fill="#FF7043"/>
+                                <rect x="8" y="32" width="28" height="16" rx="3" fill="#cc5522"/>
+                                <text x="22" y="62" text-anchor="middle" fill="#FF7043" font-size="7" font-family="Poppins" font-weight="700">???</text>
+                            </g>
+                            <g transform="translate(165,128)">
+                                <rect width="44" height="54" rx="6" fill="#243447" stroke="#4a8fa4" stroke-width="1"/>
+                                <circle cx="22" cy="18" r="10" fill="#b8c47a"/>
+                                <rect x="8" y="32" width="28" height="16" rx="3" fill="#90a050"/>
+                                <text x="22" y="62" text-anchor="middle" fill="#aac4e0" font-size="7" font-family="Poppins">Léa</text>
+                            </g>
+                            <g transform="translate(219,128)">
+                                <rect width="44" height="54" rx="6" fill="#243447" stroke="#4a8fa4" stroke-width="1"/>
+                                <circle cx="22" cy="18" r="10" fill="#c47ab8"/>
+                                <rect x="8" y="32" width="28" height="16" rx="3" fill="#a05090"/>
+                                <text x="22" y="62" text-anchor="middle" fill="#aac4e0" font-size="7" font-family="Poppins">Marc</text>
+                            </g>
+                            <g transform="translate(273,128)">
+                                <rect width="44" height="54" rx="6" fill="#243447" stroke="#4a8fa4" stroke-width="1"/>
+                                <circle cx="22" cy="18" r="10" fill="#e8a87a"/>
+                                <rect x="8" y="32" width="28" height="16" rx="3" fill="#c08050"/>
+                                <text x="22" y="62" text-anchor="middle" fill="#aac4e0" font-size="7" font-family="Poppins">Julie</text>
+                            </g>
+                            <!-- Point d'interrogation flottant -->
+                            <text x="360" y="110" text-anchor="middle" fill="#FF7043" font-size="40" font-family="Poppins" opacity="0.3" font-weight="700">?</text>
+                        </svg>
+                    </div>
                     <div class="projet-overlay">
                         <div class="projet-links">
-                            <a href="images/projet1.png" class="projet-link" target="_blank"><i class="fas fa-eye"></i></a>
+                            <a href="https://zinedineamor.github.io/quiestcedescartes/" class="projet-link" target="_blank" title="Voir le projet"><i class="fas fa-eye"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="projet-content">
-                    <h3>Voyage en C# :</h3>
-                    <p>Calculateur de montant de billets d'avion prenant en compte plusieurs paramètres, cliquer sur la photo pour le téléchargement.</p>
+                    <h3>Qui est-ce ? (1 mensonge autorisé)</h3>
+                    <p>Jeu de devinette interactif avec 17 personnages et 13 questions. Le joueur peut mentir à une question, le programme trouve quand même le personnage. Réalisé dans le cadre du BTS SIO.</p>
                 </div>
             </div>
 
             <div class="projet-card">
                 <div class="projet-image">
-                    <img src="images/projet2.png" alt="Calculatrice en C#">
+                    <div class="projet-illustration" style="width:100%; height:200px; background: linear-gradient(135deg, #2a1f0e 0%, #5c3d1a 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+                        <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="bgPasc" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#1e1308"/>
+                                    <stop offset="100%" style="stop-color:#4a2e10"/>
+                                </linearGradient>
+                                <linearGradient id="metalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#c8a96e"/>
+                                    <stop offset="50%" style="stop-color:#8b6914"/>
+                                    <stop offset="100%" style="stop-color:#c8a96e"/>
+                                </linearGradient>
+                                <linearGradient id="wheelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#d4b483"/>
+                                    <stop offset="100%" style="stop-color:#7a5010"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="200" fill="url(#bgPasc)"/>
+                            <!-- Titre -->
+                            <text x="200" y="24" text-anchor="middle" fill="#FF7043" font-size="14" font-family="Poppins, sans-serif" font-weight="700">Musée de La Pascaline</text>
+                            <text x="200" y="40" text-anchor="middle" fill="#c8a96e" font-size="8.5" font-family="Poppins, sans-serif" font-style="italic">Blaise Pascal, 1642</text>
+                            <!-- Corps de la machine -->
+                            <rect x="60" y="55" width="280" height="95" rx="8" fill="url(#metalGrad)" stroke="#a07820" stroke-width="2"/>
+                            <rect x="68" y="63" width="264" height="79" rx="5" fill="#7a5a18" stroke="#c8a96e" stroke-width="1"/>
+                            <!-- 6 roues dentées -->
+                            <!-- Roue 1 -->
+                            <g transform="translate(95,102)">
+                                <circle r="24" fill="url(#wheelGrad)" stroke="#c8a96e" stroke-width="1.5"/>
+                                <circle r="18" fill="#5a3a08" stroke="#a07820" stroke-width="1"/>
+                                <!-- Dents -->
+                                <rect x="-3" y="-27" width="6" height="7" rx="1" fill="#c8a96e"/>
+                                <rect x="-3" y="20" width="6" height="7" rx="1" fill="#c8a96e"/>
+                                <rect x="20" y="-3" width="7" height="6" rx="1" fill="#c8a96e"/>
+                                <rect x="-27" y="-3" width="7" height="6" rx="1" fill="#c8a96e"/>
+                                <rect x="14" y="-21" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(45,17,-17)"/>
+                                <rect x="-20" y="-21" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(-45,-17,-17)"/>
+                                <rect x="14" y="14" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(-45,17,17)"/>
+                                <rect x="-20" y="14" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(45,-17,17)"/>
+                                <text x="0" y="5" text-anchor="middle" fill="#c8a96e" font-size="11" font-family="serif" font-weight="bold">3</text>
+                            </g>
+                            <!-- Roue 2 -->
+                            <g transform="translate(148,102)">
+                                <circle r="24" fill="url(#wheelGrad)" stroke="#c8a96e" stroke-width="1.5"/>
+                                <circle r="18" fill="#5a3a08" stroke="#a07820" stroke-width="1"/>
+                                <rect x="-3" y="-27" width="6" height="7" rx="1" fill="#c8a96e"/>
+                                <rect x="-3" y="20" width="6" height="7" rx="1" fill="#c8a96e"/>
+                                <rect x="20" y="-3" width="7" height="6" rx="1" fill="#c8a96e"/>
+                                <rect x="-27" y="-3" width="7" height="6" rx="1" fill="#c8a96e"/>
+                                <rect x="14" y="-21" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(45,17,-17)"/>
+                                <rect x="-20" y="-21" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(-45,-17,-17)"/>
+                                <rect x="14" y="14" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(-45,17,17)"/>
+                                <rect x="-20" y="14" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(45,-17,17)"/>
+                                <text x="0" y="5" text-anchor="middle" fill="#c8a96e" font-size="11" font-family="serif" font-weight="bold">6</text>
+                            </g>
+                            <!-- Roue 3 -->
+                            <g transform="translate(201,102)">
+                                <circle r="24" fill="url(#wheelGrad)" stroke="#c8a96e" stroke-width="1.5"/>
+                                <circle r="18" fill="#5a3a08" stroke="#a07820" stroke-width="1"/>
+                                <rect x="-3" y="-27" width="6" height="7" rx="1" fill="#c8a96e"/>
+                                <rect x="-3" y="20" width="6" height="7" rx="1" fill="#c8a96e"/>
+                                <rect x="20" y="-3" width="7" height="6" rx="1" fill="#c8a96e"/>
+                                <rect x="-27" y="-3" width="7" height="6" rx="1" fill="#c8a96e"/>
+                                <rect x="14" y="-21" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(45,17,-17)"/>
+                                <rect x="-20" y="-21" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(-45,-17,-17)"/>
+                                <rect x="14" y="14" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(-45,17,17)"/>
+                                <rect x="-20" y="14" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(45,-17,17)"/>
+                                <text x="0" y="5" text-anchor="middle" fill="#c8a96e" font-size="11" font-family="serif" font-weight="bold">4</text>
+                            </g>
+                            <!-- Roue 4 -->
+                            <g transform="translate(254,102)">
+                                <circle r="24" fill="url(#wheelGrad)" stroke="#c8a96e" stroke-width="1.5"/>
+                                <circle r="18" fill="#5a3a08" stroke="#a07820" stroke-width="1"/>
+                                <rect x="-3" y="-27" width="6" height="7" rx="1" fill="#c8a96e"/>
+                                <rect x="-3" y="20" width="6" height="7" rx="1" fill="#c8a96e"/>
+                                <rect x="20" y="-3" width="7" height="6" rx="1" fill="#c8a96e"/>
+                                <rect x="-27" y="-3" width="7" height="6" rx="1" fill="#c8a96e"/>
+                                <rect x="14" y="-21" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(45,17,-17)"/>
+                                <rect x="-20" y="-21" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(-45,-17,-17)"/>
+                                <rect x="14" y="14" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(-45,17,17)"/>
+                                <rect x="-20" y="14" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(45,-17,17)"/>
+                                <text x="0" y="5" text-anchor="middle" fill="#c8a96e" font-size="11" font-family="serif" font-weight="bold">2</text>
+                            </g>
+                            <!-- Roue 5 -->
+                            <g transform="translate(307,102)">
+                                <circle r="24" fill="url(#wheelGrad)" stroke="#c8a96e" stroke-width="1.5"/>
+                                <circle r="18" fill="#5a3a08" stroke="#a07820" stroke-width="1"/>
+                                <rect x="-3" y="-27" width="6" height="7" rx="1" fill="#c8a96e"/>
+                                <rect x="-3" y="20" width="6" height="7" rx="1" fill="#c8a96e"/>
+                                <rect x="20" y="-3" width="7" height="6" rx="1" fill="#c8a96e"/>
+                                <rect x="-27" y="-3" width="7" height="6" rx="1" fill="#c8a96e"/>
+                                <rect x="14" y="-21" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(45,17,-17)"/>
+                                <rect x="-20" y="-21" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(-45,-17,-17)"/>
+                                <rect x="14" y="14" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(-45,17,17)"/>
+                                <rect x="-20" y="14" width="6" height="7" rx="1" fill="#c8a96e" transform="rotate(45,-17,17)"/>
+                                <text x="0" y="5" text-anchor="middle" fill="#c8a96e" font-size="11" font-family="serif" font-weight="bold">8</text>
+                            </g>
+                            <!-- Barre du bas -->
+                            <rect x="68" y="133" width="264" height="6" rx="2" fill="#a07820" opacity="0.6"/>
+                            <!-- Texte résultat -->
+                            <text x="200" y="170" text-anchor="middle" fill="#c8a96e" font-size="10" font-family="Poppins, sans-serif" opacity="0.8">Première machine à calculer — 1642</text>
+                        </svg>
+                    </div>
                     <div class="projet-overlay">
                         <div class="projet-links">
-                            <a href="images/projet2.png" class="projet-link" target="_blank"><i class="fas fa-eye"></i></a>
+                            <a href="https://zinedineamor.github.io/pascaline/" class="projet-link" target="_blank" title="Voir le projet"><i class="fas fa-eye"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="projet-content">
-                    <h3>Calculatrice en C# :</h3>
-                    <p>Programme représentant une calculatrice, cliquer sur la photo pour le téléchargement.</p>
+                    <h3>Musée de La Pascaline</h3>
+                    <p>Site musée virtuel dédié à La Pascaline, première machine à calculer mécanique inventée par Blaise Pascal en 1642. Réalisé en binôme dans le cadre d'un projet de 1ère année de BTS SIO option SLAM.</p>
                 </div>
             </div>
 
@@ -136,3 +322,4 @@
     </footer>
 </body>
 </html>
+
