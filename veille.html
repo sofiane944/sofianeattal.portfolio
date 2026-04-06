@@ -10,8 +10,6 @@
         :root { --primary-color: #FAF3E0; --secondary-color: #F5E6D3; --accent-color: #FF7043; --text-color: #5D4037; --text-secondary: #8D6E63; --transition: all 0.3s ease; --bg-color: #FAF3E0; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background-color: var(--primary-color); color: var(--text-color); line-height: 1.6; }
-
-        /* NAVBAR */
         .navbar { position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 2rem; background: rgba(250,243,224,0.95); backdrop-filter: blur(10px); z-index: 1000; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 10px rgba(93,64,55,0.1); }
         .nav-links { display: flex; gap: 2rem; align-items: center; }
         .nav-links a { color: var(--text-color); text-decoration: none; margin-left: 2rem; transition: var(--transition); position: relative; }
@@ -20,101 +18,75 @@
         .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
         .nav-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-
-        /* HERO */
         .veille-hero { padding: 120px 0 60px; background-color: var(--secondary-color); text-align: center; }
         .veille-hero h1 { font-size: 2.8rem; margin-bottom: 1rem; color: var(--accent-color); }
         .veille-hero .subtitle { font-size: 1.2rem; color: var(--text-secondary); }
-
-        /* CONTENT */
         .veille-content { padding: 4rem 0; background: var(--bg-color); }
         .veille-section { margin-bottom: 4rem; padding: 2rem; background-color: var(--primary-color); border-radius: 10px; box-shadow: 0 4px 6px rgba(255,112,67,0.1); }
-        .veille-section h2 { font-size: 2rem; margin-bottom: 2rem; color: var(--accent-color); text-align: center; }
-        .veille-section > p { font-size: 1.1rem; line-height: 1.8; color: var(--text-color); text-align: center; max-width: 800px; margin: 0 auto 1.5rem; }
+        .veille-section h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--accent-color); text-align: center; }
+        .veille-section > p { font-size: 1.05rem; line-height: 1.8; color: var(--text-color); text-align: center; max-width: 800px; margin: 0 auto 1.5rem; }
+        .veille-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .veille-card-simple { background: var(--secondary-color); padding: 1.5rem; border-radius: 10px; text-align: center; transition: var(--transition); }
+        .veille-card-simple:hover { transform: translateY(-4px); box-shadow: 0 8px 15px rgba(255,112,67,0.4); }
+        .veille-card-simple i { font-size: 2rem; color: var(--accent-color); margin-bottom: 0.8rem; display: block; }
+        .veille-card-simple h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-color); }
+        .veille-card-simple p { font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary); }
 
-        /* CARTES SIMPLES */
-        .veille-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .veille-card-simple { background: var(--secondary-color); padding: 2rem; border-radius: 10px; text-align: center; transition: var(--transition); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .veille-card-simple:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(255,112,67,0.5); }
-        .veille-card-simple i { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem; display: block; }
-        .veille-card-simple h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-color); }
-        .veille-card-simple p { font-size: 1rem; line-height: 1.6; color: var(--text-secondary); }
-
-        /* INTRO VEILLE */
-        .veille-intro { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 2rem; background: var(--secondary-color); padding: 2rem; border-radius: 15px; }
-        .veille-intro-text { flex: 1; }
-        .veille-intro-text p { font-size: 1.05rem; line-height: 1.8; color: var(--text-color); }
-        .veille-intro-image { font-size: 4rem; color: var(--accent-color); opacity: 0.8; animation: pulse 2s infinite; }
-
-        /* SOURCES CARDS */
-        .veille-sites-header { text-align: center; margin: 3rem 0 2rem; }
-        .veille-sites-header h3 { color: var(--accent-color); font-size: 2rem; margin-bottom: 1rem; }
-        .veille-sites-header p { color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto; }
-        .veille-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .veille-card { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); border-radius: 15px; padding: 2rem; text-decoration: none; color: var(--text-color); transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.1); display: block; }
-        .veille-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 30px rgba(255,112,67,0.2); }
-        .veille-card-content { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%; }
-        .veille-card h4 { color: var(--accent-color); margin-bottom: 1rem; font-size: 1.5rem; font-weight: 600; }
-        .veille-card p { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
-        .veille-card-footer { margin-top: auto; }
-        .veille-card-link { color: var(--accent-color); font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; }
-        .veille-card-icon { position: absolute; bottom: 1.5rem; right: 1.5rem; font-size: 2.5rem; color: var(--accent-color); opacity: 0.2; transition: all 0.3s ease; }
-        .veille-card:hover .veille-card-icon { opacity: 0.6; transform: scale(1.2) rotate(5deg); }
-
-        /* ===== APPLICATION RSS ===== */
-        .rss-app { margin-top: 2rem; }
-
-        .rss-stats { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 1.5rem; }
-        .rss-stat { background: var(--secondary-color); border-radius: 10px; padding: 0.8rem 1.2rem; flex: 1; min-width: 80px; text-align: center; }
-        .rss-stat-num { font-size: 1.8rem; font-weight: 700; color: var(--accent-color); }
-        .rss-stat-label { font-size: 0.75rem; color: var(--text-secondary); margin-top: 2px; }
-        .rss-refresh-btn { margin-left: auto; padding: 0.6rem 1.4rem; background: var(--accent-color); color: #fff; border: none; border-radius: 30px; font-family: 'Poppins', sans-serif; font-size: 0.9rem; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 0.5rem; }
+        /* ===== RSS APP ===== */
+        .rss-app { margin-top: 1.5rem; }
+        .rss-stats { display: flex; gap: 1rem; flex-wrap: wrap; align-items: stretch; margin-bottom: 1.5rem; }
+        .rss-stat { background: var(--secondary-color); border-radius: 10px; padding: 0.8rem 1.2rem; flex: 1; min-width: 70px; text-align: center; }
+        .rss-stat-num { font-size: 1.6rem; font-weight: 700; color: var(--accent-color); }
+        .rss-stat-label { font-size: 0.72rem; color: var(--text-secondary); }
+        .rss-refresh-btn { padding: 0.6rem 1.4rem; background: var(--accent-color); color: #fff; border: none; border-radius: 30px; font-family: 'Poppins',sans-serif; font-size: 0.88rem; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; }
         .rss-refresh-btn:hover { background: #e64a19; transform: translateY(-2px); }
-        .rss-refresh-btn i { font-size: 0.85rem; }
 
-        .rss-search { width: 100%; padding: 0.8rem 1.2rem; font-size: 1rem; font-family: 'Poppins', sans-serif; border: 2px solid var(--secondary-color); border-radius: 30px; background: var(--primary-color); color: var(--text-color); margin-bottom: 1.2rem; outline: none; transition: var(--transition); }
+        .rss-search { width: 100%; padding: 0.75rem 1.2rem; font-size: 0.95rem; font-family: 'Poppins',sans-serif; border: 2px solid var(--secondary-color); border-radius: 30px; background: var(--primary-color); color: var(--text-color); margin-bottom: 1rem; outline: none; transition: var(--transition); }
         .rss-search:focus { border-color: var(--accent-color); }
 
-        .rss-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
-        .rss-filter { padding: 0.4rem 1rem; border-radius: 30px; border: 1.5px solid var(--secondary-color); background: transparent; color: var(--text-secondary); font-family: 'Poppins', sans-serif; font-size: 0.85rem; cursor: pointer; transition: var(--transition); }
+        .rss-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+        .rss-filter { padding: 0.35rem 1rem; border-radius: 30px; border: 1.5px solid var(--secondary-color); background: transparent; color: var(--text-secondary); font-family: 'Poppins',sans-serif; font-size: 0.82rem; cursor: pointer; transition: var(--transition); }
         .rss-filter.active { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
         .rss-filter:hover:not(.active) { border-color: var(--accent-color); color: var(--accent-color); }
 
-        .rss-sources { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; margin-bottom: 1.5rem; }
-        .rss-source-lbl { font-size: 0.8rem; color: var(--text-secondary); }
-        .rss-src { padding: 0.3rem 0.9rem; border-radius: 30px; border: 1px solid var(--secondary-color); font-size: 0.8rem; color: var(--text-secondary); cursor: pointer; transition: var(--transition); }
+        .rss-sources { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; margin-bottom: 1.5rem; }
+        .rss-source-lbl { font-size: 0.78rem; color: var(--text-secondary); margin-right: 4px; }
+        .rss-src { padding: 0.25rem 0.8rem; border-radius: 30px; border: 1px solid var(--secondary-color); font-size: 0.75rem; color: var(--text-secondary); cursor: pointer; transition: var(--transition); }
         .rss-src.active { border-color: var(--accent-color); color: var(--accent-color); background: rgba(255,112,67,0.08); }
         .rss-src:hover:not(.active) { border-color: var(--accent-color); color: var(--accent-color); }
 
         .rss-articles-list { display: flex; flex-direction: column; gap: 1rem; }
-
         .rss-article { background: var(--secondary-color); border-radius: 12px; padding: 1.2rem 1.5rem; cursor: pointer; transition: var(--transition); border-left: 4px solid transparent; }
-        .rss-article:hover { transform: translateX(4px); box-shadow: 0 4px 15px rgba(255,112,67,0.15); border-left-color: var(--accent-color); }
-
+        .rss-article:hover { transform: translateX(5px); box-shadow: 0 4px 15px rgba(255,112,67,0.15); border-left-color: var(--accent-color); }
         .rss-article-meta { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.6rem; }
-        .rss-badge { font-size: 0.72rem; padding: 2px 10px; border-radius: 30px; font-weight: 600; }
-        .badge-cryptoast { background: #dbeafe; color: #1e40af; }
-        .badge-jdc { background: #ede9fe; color: #5b21b6; }
-        .badge-coinacademy { background: #d1fae5; color: #065f46; }
-        .badge-cointelegraph { background: #fef3c7; color: #92400e; }
-        .badge-decrypt { background: #fce7f3; color: #9d174d; }
-        .badge-ethereum { background: #e0f2fe; color: #0369a1; }
-        .rss-cat { font-size: 0.72rem; padding: 2px 10px; border-radius: 30px; background: rgba(93,64,55,0.1); color: var(--text-secondary); }
-        .rss-date { font-size: 0.72rem; color: var(--text-secondary); margin-left: auto; }
 
+        .rss-badge { font-size: 0.7rem; padding: 2px 9px; border-radius: 30px; font-weight: 600; }
+        .b-lemonde { background: #e8f0fe; color: #1a4a9e; }
+        .b-silicon { background: #fce7f3; color: #9d174d; }
+        .b-lesnumeriques { background: #d1fae5; color: #065f46; }
+        .b-usine { background: #fef3c7; color: #92400e; }
+        .b-devto { background: #ede9fe; color: #5b21b6; }
+        .b-openclassrooms { background: #ffedd5; color: #9a3412; }
+        .b-jeuxvideo { background: #f0fdf4; color: #166534; }
+        .b-01net { background: #fdf2f8; color: #831843; }
+        .b-blogdumod { background: #eff6ff; color: #1e40af; }
+        .b-developpez { background: #f5f3ff; color: #4c1d95; }
+
+        .rss-cat { font-size: 0.7rem; padding: 2px 9px; border-radius: 30px; background: rgba(93,64,55,0.1); color: var(--text-secondary); }
+        .rss-date { font-size: 0.7rem; color: var(--text-secondary); margin-left: auto; }
         .rss-article-title { font-size: 1rem; font-weight: 600; color: var(--text-color); margin-bottom: 0.4rem; line-height: 1.4; }
-        .rss-article-summary { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.8rem; }
+        .rss-article-summary { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.8rem; }
         .rss-article-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
-        .rss-read-link { font-size: 0.82rem; color: var(--accent-color); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; }
+        .rss-read-link { font-size: 0.82rem; color: var(--accent-color); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; }
         .rss-read-link:hover { text-decoration: underline; }
         .rss-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-        .rss-tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 30px; background: rgba(255,112,67,0.1); color: var(--accent-color); }
-
+        .rss-tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 30px; background: rgba(255,112,67,0.1); color: var(--accent-color); }
+        .rss-pourquoi { font-size: 0.78rem; color: #0f6e56; background: #e1f5ee; border-radius: 6px; padding: 4px 10px; margin-top: 6px; display: inline-block; }
         .rss-loading { text-align: center; padding: 3rem 1rem; color: var(--text-secondary); font-size: 1rem; }
         .rss-loading i { margin-right: 0.5rem; color: var(--accent-color); }
         .rss-empty { text-align: center; padding: 3rem 1rem; color: var(--text-secondary); font-size: 0.95rem; }
+        .rss-info-banner { background: rgba(255,112,67,0.08); border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
 
-        /* FOOTER */
         footer { background-color: var(--secondary-color); padding: 3rem 2rem 1rem; }
         .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
         .footer-section h3 { color: var(--accent-color); margin-bottom: 1rem; }
@@ -124,19 +96,14 @@
         .footer-section a:hover { color: var(--accent-color); }
         .footer-bottom { text-align: center; padding: 1rem 0; border-top: 1px solid rgba(93,64,55,0.2); margin-top: 2rem; }
         .footer-bottom p { color: var(--text-color); font-size: 0.9rem; }
-
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
-        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
         .fa-spin { animation: spin 1s linear infinite; }
-
         @media (max-width: 768px) {
             .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: rgba(250,243,224,0.98); padding: 1rem 2rem; }
             .nav-links.open { display: flex; }
             .nav-toggle { display: block; }
             .veille-hero h1 { font-size: 2rem; }
-            .veille-intro { flex-direction: column; }
-            .veille-cards { grid-template-columns: 1fr; }
-            .rss-refresh-btn { margin-left: 0; width: 100%; justify-content: center; }
+            .rss-refresh-btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -144,7 +111,7 @@
     <nav class="navbar">
         <div class="nav-links" id="navLinks">
             <a href="index.html">Accueil</a>
-            <a href="presentation.html">Ma présentation</a>
+            <a href="presentation.html">Mon parcours</a>
             <a href="bts-sio.html">BTS SIO</a>
             <a href="certifications.html">Certifications</a>
             <a href="projets.html">Projets</a>
@@ -156,145 +123,73 @@
     <section class="veille-hero">
         <div class="container">
             <h1>Veille Technologique</h1>
-            <p class="subtitle">Suivi des dernières innovations et tendances en informatique</p>
+            <p class="subtitle">BTS SIO option SLAM — Développement &amp; Applications Blockchain</p>
         </div>
     </section>
 
     <div class="veille-content">
         <div class="container">
 
-            <!-- Section 1 : définition -->
+            <!-- Section définition -->
             <div class="veille-section">
                 <h2>Qu'est-ce que la veille technologique ?</h2>
-                <p>La veille technologique est un processus continu de surveillance et d'analyse des évolutions technologiques dans un domaine spécifique. C'est une activité essentielle pour rester à jour dans le monde de l'informatique en constante évolution.</p>
+                <p>La veille technologique consiste à surveiller en continu les évolutions du secteur informatique pour rester à jour et anticiper les tendances. En BTS SIO SLAM, elle est essentielle pour un développeur qui doit connaître les nouveaux langages, frameworks et pratiques du marché.</p>
                 <div class="veille-grid">
-                    <div class="veille-card-simple">
-                        <i class="fas fa-lightbulb"></i>
-                        <h3>Innovation</h3>
-                        <p>Identifier les nouvelles technologies et solutions émergentes pour rester compétitif.</p>
-                    </div>
-                    <div class="veille-card-simple">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Sécurité</h3>
-                        <p>Se tenir informé des nouvelles menaces et vulnérabilités pour protéger les systèmes.</p>
-                    </div>
-                    <div class="veille-card-simple">
-                        <i class="fas fa-tachometer-alt"></i>
-                        <h3>Performance</h3>
-                        <p>Découvrir des outils et méthodes pour optimiser les infrastructures existantes.</p>
-                    </div>
+                    <div class="veille-card-simple"><i class="fas fa-code"></i><h3>Développement</h3><p>Nouveaux frameworks, langages et bonnes pratiques de développement web et applicatif.</p></div>
+                    <div class="veille-card-simple"><i class="fas fa-database"></i><h3>Bases de données</h3><p>Évolutions SQL, NoSQL, et nouvelles architectures de gestion de données.</p></div>
+                    <div class="veille-card-simple"><i class="fas fa-shield-alt"></i><h3>Cybersécurité</h3><p>Nouvelles vulnérabilités, méthodes de protection et normes de sécurité applicative.</p></div>
+                    <div class="veille-card-simple"><i class="fas fa-cube"></i><h3>Blockchain</h3><p>Applications décentralisées, smart contracts et nouvelles utilisations de la blockchain.</p></div>
                 </div>
             </div>
 
-            <!-- Section 2 : sujet + sources -->
-            <div class="veille-section">
-                <h2>Ma Veille sur les Applications Blockchain</h2>
-                <div class="veille-intro">
-                    <div class="veille-intro-text">
-                        <p>Pour recueillir de nouvelles informations, la méthode de veille automatique est utilisée. J'ai développé une application basée sur les flux <strong>RSS</strong> qui permet de rassembler automatiquement des articles sur les applications blockchain depuis plusieurs sources francophones et internationales.</p>
-                    </div>
-                    <div class="veille-intro-image">
-                        <i class="fas fa-cube"></i>
-                    </div>
-                </div>
-
-                <div class="veille-sites-header">
-                    <h3>Mes Sources de Veille</h3>
-                    <p>Voici les sites dont je surveille les flux RSS pour rester informé des dernières actualités blockchain :</p>
-                </div>
-
-                <div class="veille-cards">
-                    <a href="https://cryptoast.fr" target="_blank" class="veille-card">
-                        <div class="veille-card-content">
-                            <h4>Cryptoast</h4>
-                            <p>Référence francophone sur la blockchain, les cryptomonnaies et les applications décentralisées.</p>
-                            <div class="veille-card-footer"><span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span></div>
-                        </div>
-                        <i class="fas fa-newspaper veille-card-icon"></i>
-                    </a>
-                    <a href="https://www.journalducoin.com" target="_blank" class="veille-card">
-                        <div class="veille-card-content">
-                            <h4>Journal du Coin</h4>
-                            <p>Média francophone spécialisé dans l'actualité blockchain, DeFi, NFT et Web3.</p>
-                            <div class="veille-card-footer"><span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span></div>
-                        </div>
-                        <i class="fas fa-coins veille-card-icon"></i>
-                    </a>
-                    <a href="https://coinacademy.fr" target="_blank" class="veille-card">
-                        <div class="veille-card-content">
-                            <h4>CoinAcademy</h4>
-                            <p>Site éducatif francophone dédié à la blockchain, aux smart contracts et aux dApps.</p>
-                            <div class="veille-card-footer"><span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span></div>
-                        </div>
-                        <i class="fas fa-graduation-cap veille-card-icon"></i>
-                    </a>
-                    <a href="https://www.ethereum.org/fr" target="_blank" class="veille-card">
-                        <div class="veille-card-content">
-                            <h4>Ethereum.org</h4>
-                            <p>Site officiel d'Ethereum, principale plateforme de développement d'applications blockchain.</p>
-                            <div class="veille-card-footer"><span class="veille-card-link"><i class="fas fa-external-link-alt"></i> Visiter le site</span></div>
-                        </div>
-                        <i class="fab fa-ethereum veille-card-icon"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Section 3 : Application RSS -->
+            <!-- Agrégateur RSS -->
             <div class="veille-section">
                 <h2><i class="fas fa-rss" style="margin-right:0.6rem;"></i>Agrégateur RSS — Articles en direct</h2>
-                <p>Les articles ci-dessous sont récupérés automatiquement en temps réel depuis les flux RSS des sources de veille. Filtrez par thème ou par source, puis cliquez sur un article pour le lire.</p>
+                <p>Articles récupérés automatiquement depuis des sources spécialisées en développement, informatique et blockchain. Chaque article est analysé pour te dire <strong>pourquoi il est utile pour ton BTS SIO SLAM</strong>.</p>
 
                 <div class="rss-app">
-
-                    <div class="rss-stats">
-                        <div class="rss-stat">
-                            <div class="rss-stat-num" id="stat-total">—</div>
-                            <div class="rss-stat-label">Articles</div>
-                        </div>
-                        <div class="rss-stat">
-                            <div class="rss-stat-num" id="stat-sources">6</div>
-                            <div class="rss-stat-label">Sources</div>
-                        </div>
-                        <div class="rss-stat">
-                            <div class="rss-stat-num" id="stat-today">—</div>
-                            <div class="rss-stat-label">Aujourd'hui</div>
-                        </div>
-                        <div class="rss-stat">
-                            <div class="rss-stat-num" id="stat-week">—</div>
-                            <div class="rss-stat-label">Cette semaine</div>
-                        </div>
-                        <button class="rss-refresh-btn" onclick="loadRSSArticles()">
-                            <i class="fas fa-sync-alt" id="refresh-icon"></i> Actualiser
-                        </button>
+                    <div class="rss-info-banner">
+                        <i class="fas fa-info-circle" style="color:var(--accent-color);margin-right:6px;"></i>
+                        Les flux sont récupérés en temps réel depuis <strong>10 sources spécialisées</strong> : presse tech française, sites de développeurs, tutoriels et actualités blockchain. Clique sur un article pour l'ouvrir.
                     </div>
 
-                    <input class="rss-search" type="text" id="rss-search" placeholder="Rechercher un article..." oninput="renderRSS()">
+                    <div class="rss-stats">
+                        <div class="rss-stat"><div class="rss-stat-num" id="stat-total">—</div><div class="rss-stat-label">Articles</div></div>
+                        <div class="rss-stat"><div class="rss-stat-num" id="stat-sources">10</div><div class="rss-stat-label">Sources</div></div>
+                        <div class="rss-stat"><div class="rss-stat-num" id="stat-today">—</div><div class="rss-stat-label">Aujourd'hui</div></div>
+                        <div class="rss-stat"><div class="rss-stat-num" id="stat-slam">—</div><div class="rss-stat-label">Liés SLAM</div></div>
+                        <button class="rss-refresh-btn" onclick="loadRSS()"><i class="fas fa-sync-alt" id="refresh-icon"></i> Actualiser</button>
+                    </div>
+
+                    <input class="rss-search" type="text" id="rss-search" placeholder="Rechercher : React, SQL, API, blockchain, Python..." oninput="renderRSS()">
 
                     <div class="rss-filters">
-                        <button class="rss-filter active" onclick="setRSSFilter(this,'all')">Tous</button>
-                        <button class="rss-filter" onclick="setRSSFilter(this,'defi')">DeFi</button>
-                        <button class="rss-filter" onclick="setRSSFilter(this,'nft')">NFT</button>
-                        <button class="rss-filter" onclick="setRSSFilter(this,'ethereum')">Ethereum</button>
-                        <button class="rss-filter" onclick="setRSSFilter(this,'bitcoin')">Bitcoin</button>
-                        <button class="rss-filter" onclick="setRSSFilter(this,'web3')">Web3</button>
-                        <button class="rss-filter" onclick="setRSSFilter(this,'regulation')">Régulation</button>
+                        <button class="rss-filter active" onclick="setFilter(this,'all')">Tous</button>
+                        <button class="rss-filter" onclick="setFilter(this,'dev')">Développement</button>
+                        <button class="rss-filter" onclick="setFilter(this,'web')">Web &amp; Front</button>
+                        <button class="rss-filter" onclick="setFilter(this,'bdd')">Bases de données</button>
+                        <button class="rss-filter" onclick="setFilter(this,'secu')">Sécurité</button>
+                        <button class="rss-filter" onclick="setFilter(this,'blockchain')">Blockchain</button>
+                        <button class="rss-filter" onclick="setFilter(this,'ia')">IA &amp; Data</button>
+                        <button class="rss-filter" onclick="setFilter(this,'emploi')">Emploi &amp; Métiers</button>
                     </div>
 
                     <div class="rss-sources">
                         <span class="rss-source-lbl">Sources :</span>
-                        <span class="rss-src active" onclick="setRSSSrc(this,'all')">Toutes</span>
-                        <span class="rss-src" onclick="setRSSSrc(this,'Cryptoast')">Cryptoast</span>
-                        <span class="rss-src" onclick="setRSSSrc(this,'Journal du Coin')">Journal du Coin</span>
-                        <span class="rss-src" onclick="setRSSSrc(this,'CoinAcademy')">CoinAcademy</span>
-                        <span class="rss-src" onclick="setRSSSrc(this,'Cointelegraph')">Cointelegraph</span>
-                        <span class="rss-src" onclick="setRSSSrc(this,'Decrypt')">Decrypt</span>
-                        <span class="rss-src" onclick="setRSSSrc(this,'Ethereum Blog')">Ethereum Blog</span>
+                        <span class="rss-src active" onclick="setSrc(this,'all')">Toutes</span>
+                        <span class="rss-src" onclick="setSrc(this,'Le Monde Informatique')">Le Monde Info</span>
+                        <span class="rss-src" onclick="setSrc(this,'Silicon')">Silicon</span>
+                        <span class="rss-src" onclick="setSrc(this,'Les Numériques')">Les Numériques</span>
+                        <span class="rss-src" onclick="setSrc(this,'Usine Digitale')">Usine Digitale</span>
+                        <span class="rss-src" onclick="setSrc(this,'Dev.to')">Dev.to</span>
+                        <span class="rss-src" onclick="setSrc(this,'01net')">01net</span>
+                        <span class="rss-src" onclick="setSrc(this,'Blog du Modérateur')">BDM</span>
+                        <span class="rss-src" onclick="setSrc(this,'Developpez.com')">Developpez</span>
+                        <span class="rss-src" onclick="setSrc(this,'Cryptoast')">Cryptoast</span>
+                        <span class="rss-src" onclick="setSrc(this,'Journal du Coin')">JDC</span>
                     </div>
 
-                    <div id="rss-articles">
-                        <div class="rss-loading"><i class="fas fa-circle-notch fa-spin"></i> Chargement des flux RSS...</div>
-                    </div>
-
+                    <div id="rss-articles"><div class="rss-loading"><i class="fas fa-circle-notch fa-spin"></i> Chargement des flux RSS...</div></div>
                 </div>
             </div>
 
@@ -307,7 +202,7 @@
                 <h3>Navigation</h3>
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="presentation.html">Ma présentation</a></li>
+                    <li><a href="presentation.html">Mon parcours</a></li>
                     <li><a href="bts-sio.html">BTS SIO</a></li>
                     <li><a href="certifications.html">Certifications</a></li>
                     <li><a href="projets.html">Projets</a></li>
@@ -318,166 +213,208 @@
         <div class="footer-bottom"><p>© 2025 ATTAL Sofiane. Tous droits réservés.</p></div>
     </footer>
 
-    <script>
-        const RSS_FEEDS = [
-            { name: 'Cryptoast',      url: 'https://cryptoast.fr/feed/',            badge: 'badge-cryptoast' },
-            { name: 'Journal du Coin', url: 'https://journalducoin.com/feed/',       badge: 'badge-jdc' },
-            { name: 'CoinAcademy',    url: 'https://coinacademy.fr/feed/',           badge: 'badge-coinacademy' },
-            { name: 'Cointelegraph',  url: 'https://fr.cointelegraph.com/rss',       badge: 'badge-cointelegraph' },
-            { name: 'Decrypt',        url: 'https://decrypt.co/feed',               badge: 'badge-decrypt' },
-            { name: 'Ethereum Blog',  url: 'https://blog.ethereum.org/feed.xml',    badge: 'badge-ethereum' },
-        ];
+<script>
+const PROXY = 'https://api.rss2json.com/v1/api.json?rss_url=';
 
-        const PROXY = 'https://api.rss2json.com/v1/api.json?rss_url=';
-        let allArticles = [];
-        let currentFilter = 'all';
-        let currentSource = 'all';
+const FEEDS = [
+    { name:'Le Monde Informatique', url:'https://www.lemondeinformatique.fr/flux-rss/thematique/developpement/rss.xml', badge:'b-lemonde' },
+    { name:'Silicon',               url:'https://www.silicon.fr/feed',                                                  badge:'b-silicon' },
+    { name:'Les Numériques',        url:'https://www.lesnumeriques.com/rss.xml',                                        badge:'b-lesnumeriques' },
+    { name:'Usine Digitale',        url:'https://www.usine-digitale.fr/rss/all.xml',                                    badge:'b-usine' },
+    { name:'Dev.to',                url:'https://dev.to/feed',                                                          badge:'b-devto' },
+    { name:'01net',                 url:'https://www.01net.com/feed/',                                                  badge:'b-01net' },
+    { name:'Blog du Modérateur',    url:'https://www.blogdumoderateur.com/feed/',                                       badge:'b-blogdumod' },
+    { name:'Developpez.com',        url:'https://www.developpez.com/index/rss',                                        badge:'b-developpez' },
+    { name:'Cryptoast',             url:'https://cryptoast.fr/feed/',                                                   badge:'b-openclassrooms' },
+    { name:'Journal du Coin',       url:'https://journalducoin.com/feed/',                                              badge:'b-jeuxvideo' },
+];
 
-        function getCategory(t, d) {
-            const s = (t + ' ' + d).toLowerCase();
-            if (s.includes('defi') || s.includes('décentralis') || s.includes('liquidit') || s.includes('yield') || s.includes('protocole')) return 'defi';
-            if (s.includes('nft') || s.includes('token non') || s.includes('metaverse') || s.includes('art numérique') || s.includes('collectible')) return 'nft';
-            if (s.includes('ethereum') || s.includes(' eth ') || s.includes('vitalik') || s.includes('solidity') || s.includes('eip-')) return 'ethereum';
-            if (s.includes('bitcoin') || s.includes(' btc') || s.includes('satoshi') || s.includes('halving') || s.includes('mining')) return 'bitcoin';
-            if (s.includes('web3') || s.includes('dapp') || s.includes('smart contract') || s.includes('dao ')) return 'web3';
-            if (s.includes('régulat') || s.includes('loi ') || s.includes(' amf') || s.includes(' sec ') || s.includes('mica') || s.includes('juridique')) return 'regulation';
-            return 'blockchain';
-        }
+// Mots-clés SLAM pour détection de pertinence
+const SLAM_KEYWORDS = ['javascript','react','vue','angular','php','python','java','sql','mysql','api','rest','json','html','css','git','github','framework','base de données','développement','application','code','programmation','algorithme','web','backend','frontend','full stack','node','docker','firebase','vercel','déploiement','agile','scrum','cybersécurité','sécurité','faille','vulnérabilité','blockchain','smart contract','ethereum','développeur','stage','bts','informatique','logiciel'];
 
-        function getTags(t, d) {
-            const s = (t + ' ' + d).toLowerCase();
-            const tags = [];
-            if (s.includes('bitcoin') || s.includes('btc')) tags.push('Bitcoin');
-            if (s.includes('ethereum') || s.includes(' eth')) tags.push('Ethereum');
-            if (s.includes('defi')) tags.push('DeFi');
-            if (s.includes('nft')) tags.push('NFT');
-            if (s.includes('web3')) tags.push('Web3');
-            if (s.includes('smart contract')) tags.push('Smart Contract');
-            if (s.includes('layer 2') || s.includes(' l2')) tags.push('Layer 2');
-            if (s.includes('staking')) tags.push('Staking');
-            return tags.slice(0, 3);
-        }
+const CAT_RULES = [
+    { cat:'blockchain', kw:['blockchain','crypto','ethereum','bitcoin','defi','nft','web3','smart contract','token','décentralis'] },
+    { cat:'ia',         kw:['intelligence artificielle','ia','machine learning','deep learning','chatgpt','llm','gpt','openai','data','algorithme','modèle'] },
+    { cat:'secu',       kw:['sécurité','cybersécurité','faille','vulnérabilité','hack','ransomware','phishing','rgpd','protection','cyberattaque','zero-day'] },
+    { cat:'bdd',        kw:['sql','mysql','postgresql','mongodb','base de données','nosql','oracle','mariadb','sqlite','requête','bdd'] },
+    { cat:'web',        kw:['html','css','react','vue','angular','javascript','typescript','frontend','interface','ux','ui','responsive','wordpress'] },
+    { cat:'dev',        kw:['python','java','php','c#','git','github','api','docker','kubernetes','devops','framework','backend','node','deploy','code','développeur','programmation','logiciel'] },
+    { cat:'emploi',     kw:['emploi','recrutement','salaire','métier','carrière','stage','alternance','offre','développeur','compétence','formation','bts','bac+2'] },
+];
 
-        function formatDate(ds) {
-            if (!ds) return '';
-            try {
-                const d = new Date(ds), now = new Date();
-                const diff = Math.floor((now - d) / 60000);
-                if (diff < 60) return diff + ' min';
-                if (diff < 1440) return Math.floor(diff/60) + 'h';
-                if (diff < 10080) return Math.floor(diff/1440) + 'j';
-                return d.toLocaleDateString('fr-FR', {day:'2-digit', month:'short'});
-            } catch(e) { return ''; }
-        }
+let allArticles = [];
+let currentFilter = 'all';
+let currentSrc = 'all';
 
-        function isToday(ds) {
-            try { const d = new Date(ds); return d.toDateString() === new Date().toDateString(); } catch(e) { return false; }
-        }
+function getCategory(t, d) {
+    const s = (t + ' ' + d).toLowerCase();
+    for (const r of CAT_RULES) {
+        if (r.kw.some(k => s.includes(k))) return r.cat;
+    }
+    return 'dev';
+}
 
-        function isThisWeek(ds) {
-            try { return (new Date() - new Date(ds)) < 7*24*3600*1000; } catch(e) { return false; }
-        }
+function getCatLabel(cat) {
+    const labels = { blockchain:'Blockchain', ia:'IA & Data', secu:'Sécurité', bdd:'Base de données', web:'Web & Front', dev:'Développement', emploi:'Emploi & Métiers' };
+    return labels[cat] || 'Informatique';
+}
 
-        function stripHtml(html) {
-            const t = document.createElement('div');
-            t.innerHTML = html || '';
-            return (t.textContent || t.innerText || '').replace(/\s+/g, ' ').trim();
-        }
+function getSlamScore(t, d) {
+    const s = (t + ' ' + d).toLowerCase();
+    return SLAM_KEYWORDS.filter(k => s.includes(k)).length;
+}
 
-        async function fetchFeed(feed) {
-            try {
-                const r = await fetch(PROXY + encodeURIComponent(feed.url) + '&count=12', { signal: AbortSignal.timeout(9000) });
-                const data = await r.json();
-                if (data.status !== 'ok') return [];
-                return (data.items || []).map(item => ({
-                    title: item.title || '',
-                    summary: stripHtml(item.description || item.content || '').substring(0, 220).trim() + '...',
-                    link: item.link || '#',
-                    date: item.pubDate || item.published || '',
-                    source: feed.name,
-                    badge: feed.badge,
-                    category: getCategory(item.title || '', item.description || ''),
-                    tags: getTags(item.title || '', item.description || '')
-                }));
-            } catch(e) { return []; }
-        }
+function getPourquoi(cat, score) {
+    if (score === 0) return null;
+    const msgs = {
+        blockchain: 'Utile pour ta veille sur les applications blockchain — sujet principal de ta veille techno.',
+        ia:         'L\'IA est de plus en plus intégrée dans le développement logiciel — compétence très demandée en SLAM.',
+        secu:       'La sécurité applicative est au programme du BTS SIO SLAM — indispensable pour tout développeur.',
+        bdd:        'Les bases de données SQL sont au cœur du programme SLAM — tu peux t\'en inspirer pour tes projets.',
+        web:        'Le développement web est la compétence principale du SLAM — cet article peut enrichir ta pratique.',
+        dev:        'Lié au développement logiciel — directement en rapport avec tes cours et projets BTS SIO.',
+        emploi:     'Connaitre le marché de l\'emploi te prépare pour ton stage et ta future carrière de développeur.',
+    };
+    return msgs[cat] || 'En lien avec les compétences du BTS SIO SLAM.';
+}
 
-        async function loadRSSArticles() {
-            document.getElementById('rss-articles').innerHTML = '<div class="rss-loading"><i class="fas fa-circle-notch fa-spin"></i> Chargement des flux RSS...</div>';
-            document.getElementById('stat-total').textContent = '—';
-            document.getElementById('stat-today').textContent = '—';
-            document.getElementById('stat-week').textContent = '—';
-            const icon = document.getElementById('refresh-icon');
-            icon.classList.add('fa-spin');
+function getTags(t, d) {
+    const s = (t + ' ' + d).toLowerCase();
+    const tagMap = [
+        ['React','react'],['Vue.js','vue.js'],['Python','python'],['JavaScript','javascript'],
+        ['PHP','php'],['SQL','sql'],['Docker','docker'],['Git','git'],['API','api rest'],
+        ['Blockchain','blockchain'],['Ethereum','ethereum'],['DeFi','defi'],['IA','intelligence artificielle'],
+        ['Sécurité','sécurité'],['Firebase','firebase'],['Node.js','node.js'],['MySQL','mysql'],
+        ['C#','c#'],['TypeScript','typescript'],['Agile','agile'],
+    ];
+    return tagMap.filter(([,kw]) => s.includes(kw)).map(([label]) => label).slice(0, 3);
+}
 
-            const results = await Promise.all(RSS_FEEDS.map(f => fetchFeed(f)));
-            allArticles = results.flat().sort((a, b) => new Date(b.date) - new Date(a.date));
+function formatDate(ds) {
+    if (!ds) return '';
+    try {
+        const d = new Date(ds), now = new Date();
+        const diff = Math.floor((now - d) / 60000);
+        if (diff < 60) return diff + ' min';
+        if (diff < 1440) return Math.floor(diff/60) + 'h';
+        if (diff < 10080) return Math.floor(diff/1440) + 'j';
+        return d.toLocaleDateString('fr-FR', {day:'2-digit', month:'short'});
+    } catch(e) { return ''; }
+}
 
-            if (allArticles.length === 0) allArticles = getFallback();
+function isToday(ds) {
+    try { return new Date(ds).toDateString() === new Date().toDateString(); } catch(e) { return false; }
+}
 
-            icon.classList.remove('fa-spin');
-            document.getElementById('stat-total').textContent = allArticles.length;
-            document.getElementById('stat-today').textContent = allArticles.filter(a => isToday(a.date)).length || '—';
-            document.getElementById('stat-week').textContent = allArticles.filter(a => isThisWeek(a.date)).length;
-            renderRSS();
-        }
+function stripHtml(html) {
+    const t = document.createElement('div');
+    t.innerHTML = html || '';
+    return (t.textContent || '').replace(/\s+/g,' ').trim();
+}
 
-        function setRSSFilter(btn, f) {
-            currentFilter = f;
-            document.querySelectorAll('.rss-filter').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            renderRSS();
-        }
+async function fetchFeed(feed) {
+    try {
+        const r = await fetch(PROXY + encodeURIComponent(feed.url) + '&count=15', { signal: AbortSignal.timeout(10000) });
+        const data = await r.json();
+        if (data.status !== 'ok' || !data.items) return [];
+        return data.items.map(item => {
+            const t = item.title || '';
+            const d = stripHtml(item.description || item.content || '');
+            const cat = getCategory(t, d);
+            const score = getSlamScore(t, d);
+            return {
+                title: t,
+                summary: d.substring(0, 230).trim() + '...',
+                link: item.link || '#',
+                date: item.pubDate || item.published || '',
+                source: feed.name,
+                badge: feed.badge,
+                category: cat,
+                tags: getTags(t, d),
+                slamScore: score,
+                pourquoi: getPourquoi(cat, score),
+            };
+        });
+    } catch(e) { return []; }
+}
 
-        function setRSSSrc(tag, s) {
-            currentSource = s;
-            document.querySelectorAll('.rss-src').forEach(t => t.classList.remove('active'));
-            tag.classList.add('active');
-            renderRSS();
-        }
+async function loadRSS() {
+    document.getElementById('rss-articles').innerHTML = '<div class="rss-loading"><i class="fas fa-circle-notch fa-spin"></i> Récupération des flux RSS en cours...</div>';
+    ['stat-total','stat-today','stat-slam'].forEach(id => document.getElementById(id).textContent = '—');
+    const icon = document.getElementById('refresh-icon');
+    icon.classList.add('fa-spin');
 
-        function renderRSS() {
-            const search = (document.getElementById('rss-search').value || '').toLowerCase();
-            let list = allArticles;
-            if (currentFilter !== 'all') list = list.filter(a => a.category === currentFilter);
-            if (currentSource !== 'all') list = list.filter(a => a.source === currentSource);
-            if (search) list = list.filter(a => a.title.toLowerCase().includes(search) || a.summary.toLowerCase().includes(search));
+    const results = await Promise.all(FEEDS.map(f => fetchFeed(f)));
+    allArticles = results.flat().sort((a,b) => new Date(b.date) - new Date(a.date));
 
-            const c = document.getElementById('rss-articles');
-            if (!list.length) { c.innerHTML = '<div class="rss-empty">Aucun article trouvé pour ces critères.</div>'; return; }
+    if (allArticles.length === 0) allArticles = getFallback();
 
-            c.innerHTML = '<div class="rss-articles-list">' + list.map(a => `
-                <div class="rss-article" onclick="window.open('${a.link}','_blank')">
-                    <div class="rss-article-meta">
-                        <span class="rss-badge ${a.badge}">${a.source}</span>
-                        <span class="rss-cat">${a.category}</span>
-                        <span class="rss-date">${formatDate(a.date)}</span>
-                    </div>
-                    <div class="rss-article-title">${a.title}</div>
-                    <div class="rss-article-summary">${a.summary}</div>
-                    <div class="rss-article-footer">
-                        <a class="rss-read-link" href="${a.link}" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Lire l'article</a>
-                        <div class="rss-tags">${a.tags.map(t => `<span class="rss-tag">${t}</span>`).join('')}</div>
-                    </div>
-                </div>
-            `).join('') + '</div>';
-        }
+    icon.classList.remove('fa-spin');
+    document.getElementById('stat-total').textContent = allArticles.length;
+    document.getElementById('stat-today').textContent = allArticles.filter(a => isToday(a.date)).length || 0;
+    document.getElementById('stat-slam').textContent = allArticles.filter(a => a.slamScore > 0).length;
+    renderRSS();
+}
 
-        function getFallback() {
-            const now = new Date();
-            return [
-                { title: "Les applications blockchain révolutionnent la finance décentralisée en 2025", summary: "La DeFi continue de croître avec de nouveaux protocoles offrant des rendements attractifs tout en améliorant la sécurité des smart contracts déployés sur Ethereum.", link: "https://cryptoast.fr", date: new Date(now-1800000).toISOString(), source: "Cryptoast", badge: "badge-cryptoast", category: "defi", tags: ["DeFi", "Ethereum"] },
-                { title: "Ethereum : la mise à jour Pectra améliore l'expérience des wallets", summary: "La prochaine mise à jour d'Ethereum apporte des améliorations significatives via l'EIP-7702 qui permet aux comptes classiques d'agir comme des smart contracts.", link: "https://journalducoin.com", date: new Date(now-7200000).toISOString(), source: "Journal du Coin", badge: "badge-jdc", category: "ethereum", tags: ["Ethereum", "Web3"] },
-                { title: "Bitcoin franchit les 100 000 dollars : analyse des facteurs déterminants", summary: "Le Bitcoin maintient une position solide, porté par l'adoption institutionnelle croissante et les ETF spot qui drainent les liquidités des marchés traditionnels.", link: "https://journalducoin.com", date: new Date(now-10800000).toISOString(), source: "Journal du Coin", badge: "badge-jdc", category: "bitcoin", tags: ["Bitcoin"] },
-                { title: "Qu'est-ce qu'un smart contract ? Guide complet pour débutants", summary: "Les smart contracts sont des programmes autonomes déployés sur une blockchain qui s'exécutent automatiquement lorsque des conditions prédéfinies sont remplies.", link: "https://coinacademy.fr", date: new Date(now-86400000).toISOString(), source: "CoinAcademy", badge: "badge-coinacademy", category: "web3", tags: ["Smart Contract", "Ethereum"] },
-                { title: "Régulation crypto en Europe : MiCA entre pleinement en vigueur", summary: "Le règlement MiCA est désormais applicable dans toute l'UE, imposant de nouvelles obligations aux prestataires de services sur actifs numériques.", link: "https://coinacademy.fr", date: new Date(now-172800000).toISOString(), source: "CoinAcademy", badge: "badge-coinacademy", category: "regulation", tags: ["Régulation"] },
-                { title: "Layer 2 : Arbitrum et Optimism dominent le marché de la scalabilité Ethereum", summary: "Les solutions Layer 2 dépassent 10 milliards de dollars de TVL. L'écosystème se consolide autour de quelques acteurs majeurs proposant des frais réduits.", link: "https://fr.cointelegraph.com", date: new Date(now-259200000).toISOString(), source: "Cointelegraph", badge: "badge-cointelegraph", category: "ethereum", tags: ["Ethereum", "Layer 2"] },
-                { title: "NFT : le marché se redéfinit autour des actifs numériques utilitaires", summary: "Après la bulle spéculative, les NFT trouvent de nouveaux cas d'usage : billets d'événements, certifications académiques, propriété d'actifs dans les jeux vidéo.", link: "https://decrypt.co", date: new Date(now-345600000).toISOString(), source: "Decrypt", badge: "badge-decrypt", category: "nft", tags: ["NFT", "Web3"] },
-                { title: "Ethereum staking : comprendre les validators et les récompenses", summary: "Avec plus de 30 millions d'ETH stakés, le réseau prouve sa robustesse. Le staking permet de sécuriser le réseau tout en générant des rendements passifs attractifs.", link: "https://blog.ethereum.org", date: new Date(now-432000000).toISOString(), source: "Ethereum Blog", badge: "badge-ethereum", category: "ethereum", tags: ["Ethereum", "Staking"] },
-            ];
-        }
+function setFilter(btn, f) {
+    currentFilter = f;
+    document.querySelectorAll('.rss-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderRSS();
+}
 
-        loadRSSArticles();
-    </script>
+function setSrc(tag, s) {
+    currentSrc = s;
+    document.querySelectorAll('.rss-src').forEach(t => t.classList.remove('active'));
+    tag.classList.add('active');
+    renderRSS();
+}
+
+function renderRSS() {
+    const search = (document.getElementById('rss-search').value || '').toLowerCase();
+    let list = allArticles;
+    if (currentFilter !== 'all') list = list.filter(a => a.category === currentFilter);
+    if (currentSrc !== 'all') list = list.filter(a => a.source === currentSrc);
+    if (search) list = list.filter(a => a.title.toLowerCase().includes(search) || a.summary.toLowerCase().includes(search));
+
+    const c = document.getElementById('rss-articles');
+    if (!list.length) { c.innerHTML = '<div class="rss-empty">Aucun article trouvé pour ces critères.<br>Essaie un autre filtre ou actualise les flux.</div>'; return; }
+
+    c.innerHTML = '<div class="rss-articles-list">' + list.map(a => `
+        <div class="rss-article" onclick="window.open('${a.link}','_blank')">
+            <div class="rss-article-meta">
+                <span class="rss-badge ${a.badge}">${a.source}</span>
+                <span class="rss-cat">${getCatLabel(a.category)}</span>
+                <span class="rss-date">${formatDate(a.date)}</span>
+            </div>
+            <div class="rss-article-title">${a.title}</div>
+            <div class="rss-article-summary">${a.summary}</div>
+            ${a.pourquoi ? `<div class="rss-pourquoi"><i class="fas fa-graduation-cap" style="margin-right:5px;"></i>${a.pourquoi}</div>` : ''}
+            <div class="rss-article-footer" style="margin-top:0.8rem;">
+                <a class="rss-read-link" href="${a.link}" target="_blank" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Lire l'article</a>
+                <div class="rss-tags">${a.tags.map(t => `<span class="rss-tag">${t}</span>`).join('')}</div>
+            </div>
+        </div>
+    `).join('') + '</div>';
+}
+
+function getFallback() {
+    const now = new Date();
+    return [
+        { title:"JavaScript : les nouveautés ES2025 que tout développeur doit connaître", summary:"ECMAScript 2025 apporte de nouvelles fonctionnalités au langage JavaScript : nouvelles méthodes pour les tableaux, amélioration de la gestion des erreurs et nouvelles APIs pour les développeurs web.", link:"https://www.developpez.com", date:new Date(now-3600000).toISOString(), source:"Developpez.com", badge:"b-developpez", category:"dev", tags:["JavaScript"], slamScore:5, pourquoi:"Lié au développement logiciel — directement en rapport avec tes cours et projets BTS SIO." },
+        { title:"React 19 : guide complet des nouvelles fonctionnalités pour les développeurs", summary:"La version 19 de React introduit les Server Components, le nouveau compilateur React et des hooks améliorés. Un must pour tout développeur front-end en 2025.", link:"https://www.blogdumoderateur.com", date:new Date(now-7200000).toISOString(), source:"Blog du Modérateur", badge:"b-blogdumod", category:"web", tags:["React","JavaScript"], slamScore:6, pourquoi:"Le développement web est la compétence principale du SLAM — cet article peut enrichir ta pratique." },
+        { title:"Sécurité web : les 10 vulnérabilités OWASP les plus courantes en 2025", summary:"L'OWASP met à jour sa liste des 10 risques les plus critiques pour la sécurité des applications web. Injection SQL, XSS, CSRF : comment les prévenir dans vos développements.", link:"https://www.silicon.fr", date:new Date(now-10800000).toISOString(), source:"Silicon", badge:"b-silicon", category:"secu", tags:["Sécurité","SQL"], slamScore:4, pourquoi:"La sécurité applicative est au programme du BTS SIO SLAM — indispensable pour tout développeur." },
+        { title:"Applications blockchain : comment les smart contracts changent la finance", summary:"Les smart contracts Ethereum permettent de créer des applications financières décentralisées sans intermédiaire. Découvrez les cas d'usage concrets en 2025.", link:"https://cryptoast.fr", date:new Date(now-14400000).toISOString(), source:"Cryptoast", badge:"b-openclassrooms", category:"blockchain", tags:["Blockchain","Ethereum"], slamScore:3, pourquoi:"Utile pour ta veille sur les applications blockchain — sujet principal de ta veille techno." },
+        { title:"MySQL vs PostgreSQL : quel SGBD choisir pour vos projets en 2025 ?", summary:"Comparatif complet entre MySQL et PostgreSQL : performances, fonctionnalités, cas d'usage. Quel système de gestion de bases de données choisir pour votre prochain projet web ?", link:"https://www.developpez.com", date:new Date(now-86400000).toISOString(), source:"Developpez.com", badge:"b-developpez", category:"bdd", tags:["SQL","MySQL"], slamScore:5, pourquoi:"Les bases de données SQL sont au cœur du programme SLAM — tu peux t'en inspirer pour tes projets." },
+        { title:"Python : les bibliothèques incontournables pour le développement web en 2025", summary:"Django, Flask, FastAPI : tour d'horizon des frameworks Python les plus utilisés pour créer des APIs REST et des applications web performantes.", link:"https://dev.to", date:new Date(now-172800000).toISOString(), source:"Dev.to", badge:"b-devto", category:"dev", tags:["Python","API"], slamScore:5, pourquoi:"Lié au développement logiciel — directement en rapport avec tes cours et projets BTS SIO." },
+        { title:"Développeur web : les salaires et opportunités d'emploi en 2025", summary:"Le marché de l'emploi pour les développeurs web reste dynamique en France. Salaires moyens, compétences les plus recherchées et perspectives pour les jeunes diplômés BTS et BUT.", link:"https://www.lemondeinformatique.fr", date:new Date(now-259200000).toISOString(), source:"Le Monde Informatique", badge:"b-lemonde", category:"emploi", tags:["JavaScript","React"], slamScore:3, pourquoi:"Connaitre le marché de l'emploi te prépare pour ton stage et ta future carrière de développeur." },
+        { title:"Git et GitHub : les bonnes pratiques pour travailler en équipe sur un projet", summary:"Branching strategy, pull requests, code review, CI/CD : comment utiliser Git efficacement en équipe pour des projets professionnels de développement logiciel.", link:"https://dev.to", date:new Date(now-345600000).toISOString(), source:"Dev.to", badge:"b-devto", category:"dev", tags:["Git"], slamScore:4, pourquoi:"Lié au développement logiciel — directement en rapport avec tes cours et projets BTS SIO." },
+        { title:"L'intelligence artificielle générative révolutionne le développement logiciel", summary:"GitHub Copilot, ChatGPT, Claude : comment les outils d'IA transforment le quotidien des développeurs. Gain de productivité, nouvelles compétences requises et impact sur les métiers.", link:"https://www.usine-digitale.fr", date:new Date(now-432000000).toISOString(), source:"Usine Digitale", badge:"b-usine", category:"ia", tags:["IA"], slamScore:3, pourquoi:"L'IA est de plus en plus intégrée dans le développement logiciel — compétence très demandée en SLAM." },
+        { title:"Docker et conteneurs : déployer ses applications web facilement", summary:"Docker simplifie le déploiement des applications en encapsulant tout l'environnement dans des conteneurs. Guide pratique pour les développeurs débutants.", link:"https://www.blogdumoderateur.com", date:new Date(now-518400000).toISOString(), source:"Blog du Modérateur", badge:"b-blogdumod", category:"dev", tags:["Docker"], slamScore:4, pourquoi:"Lié au développement logiciel — directement en rapport avec tes cours et projets BTS SIO." },
+    ];
+}
+
+loadRSS();
+</script>
 </body>
 </html>
